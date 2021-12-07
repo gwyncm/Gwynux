@@ -1,0 +1,109 @@
+<html>
+<head><title>Toadware Technologies Inc. -Accounting System</title></head>
+<body>
+<H1>Accounting System - Main Menu </H1>
+<h2> Select accounting activity.</h2>
+<p>
+<hr>
+<h3>
+<A href="/cgi-bin/account/doselect" >Select Accounting File</a><br>
+<A href="/cgi-bin/account/newinv" >Enter New Invoice Records</a><br>
+<A href="/cgi-bin/account/newexp" >Enter New Expense Records</a><br>
+<br>
+<A href="/account/invoice.html">Create General Invoices</a><br>
+<A href="/account/expense.html">Create Expense Forms</a><br>
+<A href="/account/ltinv.html"  >Create Ltree Invoices</a><br>
+<br>
+<A href="/cgi-bin/account/gstpaid">Run GST Paid Report</a><br>
+<A href="/cgi-bin/account/gstcol">Run GST Collected Report</a><br>
+<A href="/cgi-bin/account/pstrep">Run PST Collected Report</a><br>
+<A href="/cgi-bin/account/increp">Run Income Statement Report</a><br>
+<A href="/cgi-bin/account/balrep">Run Balance Sheet Report</a><br>
+</h3>
+<form action="/cgi-bin/account/doedit" method="post">
+<input type=submit value="Edit Journal Record">
+Record number: <input type=text name=record size=30>
+</form>
+<form action="/cgi-bin/account/joucgi" method="post">
+<input type=submit value="Run Journal Report">
+Journal lookup: <input type=text name=lookup size=30>
+</form>
+<form action="/cgi-bin/account/ledgcgi" method="post">
+<input type=submit value="Run Ledger Report">
+Ledger account: <select name=ledacct size=1>
+<option> 1000  Bank General            
+<option> 1010  Cash on Hand            
+<option> 1020  Prepaid Federal Taxes   
+<option> 1030  Prepaid Provincial Taxes
+<option> 1040  Inventory               
+<option> 1050  Prepaid Expenses        
+<option> 1100  GST Paid                
+<option> 1200  Accounts Receivable     
+<option> 1300  Notes Receivable        
+<option> 1500  Furniture & Fixtures    
+<option> 1510  Equipment               
+<option> 1520  Reference Library       
+<option> 1530  Vehicle(s)              
+<option> 1540  Computer Hardware       
+<option> 1550  Computer Software       
+<option> 1560  Chattels                
+<option> 1600  Elig. Capital Property  
+<option> 1610  Organizational Expenses 
+<option> 2000  Accrued Expenses
+<option> 2100  GST Collected            
+<option> 2200  PST Collected            
+<option> 2300  Accounts Payable        
+<option> 4000  Sales Services          
+<option> 4100  Sales Products          
+<option> 4200  Commissions             
+<option> 4500  Other Income            
+<option> 5100  Purchases for Resale   
+<option> 6000  Professional Services   
+<option> 6010  Secretarial Services    
+<option> 6030  Commissions             
+<option> 6050  Sub-Contracted Services 
+<option> 6100  Rent                  
+<option> 6105  Mortgage Interest       
+<option> 6110  Condominium Fees        
+<option> 6115  Property Taxes          
+<option> 6120  Insurance               
+<option> 6125  Utilities               
+<option> 6130  Repairs & Maintenance   
+<option> 6150  Other Building Expenses 
+<option> 6195  Personal Use            
+<option> 6200  Business Taxes & Permits
+<option> 6205  Telecommunications      
+<option> 6210  Postage, Courier & Frght
+<option> 6215  Materials & Supplies    
+<option> 6220  Equipment Rent & Repair 
+<option> 6225  Liab or Bus Insurance   
+<option> 6230  Printing & Copying      
+<option> 6235  Ref Books & Magazines   
+<option> 6240  Stationery & Cards      
+<option> 6250  Other Office Expenses   
+<option> 6300  Loan Interest           
+<option> 6305  Bank Charges            
+<option> 6310  Accounting & Legal Fees 
+<option> 6315  Association Dues        
+<option> 6320  Business Promotion      
+<option> 6325  Travel                  
+<option> 6330  Conferences & Seminars  
+<option> 6335  Advertising             
+<option> 6340  Small Tools             
+<option> 6350  Bad Debts               
+<option> 6360  Miscellaneous           
+<option> 6400  Garaging & Parking      
+<option> 6405  Leasing                 
+<option> 6410  Gasoline                
+<option> 6415  Insurance               
+<option> 6420  Plates & Permits        
+<option> 6425  Repairs & Maintenance   
+<option> 6430  Financing Charges       
+<option> 6435  Washing & Waxing        
+<option> 6450  Other Vehicle Expenses  
+<option> 6495  Personal Use            
+<option> 6900  Depreciation            
+</select>
+</form>
+<hr>
+</body></html>

@@ -1,0 +1,49 @@
+#! /bin/sh
+#
+# Gwynux basic installation script
+#
+# Device selection
+#
+fdisk -l | grep '^/dev.*Linux swap' > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Device Selection" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter the device name for swap space eg: /dev/hda1 \n\
+If there are no devices listed you will need to run fdisk  \n\
+Just hit cancel here and run fdisk from the main menu. \n
+`cat < /tmp/list.tmp.$$` " 20 65 \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+dev=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ X$dev == X ]
+then
+	clear
+	exit
+fi
+#
+# Verify swap device
+#
+/usr/bin/dialog --title "Basic Installation" \
+--backtitle "Gwynux Installation" \
+--yesno \
+"This will destroy the current contents of $dev \n\
+Do you wish to continue the installation\n" 8 65
+retval=$?
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+clear
+mkswap $dev
+grep -v swap /etc/fstab > /tmp/fstab
+echo $dev none swap >> /tmp/fstab
+cp /tmp/fstab /etc/fstab
+swapon -a
+echo press any key to continue
+read rest 

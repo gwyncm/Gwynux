@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# setup and generate an x configuration
+#
+while true
+do
+/usr/bin/dialog --title "Xwindows setup" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Select the desktop you wish to use.\n\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice.\n\n" 20 65 3 \
+"Exit"		"Leave X setup unchanged" \
+"Modify"	"Modify current Xconfig" \
+"Desktop"	"Select desktop" 2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		[Mm]*)	/usr/X11R6/bin/xorgcfg -textmode 2>/dev/null ;;
+		[Dd]*)	./setup.desktop ;;
+		[Ee]*)  exit ;;
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done

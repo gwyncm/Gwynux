@@ -1,0 +1,2 @@
+build busybox with ash and without init
+make install will create an _install directory

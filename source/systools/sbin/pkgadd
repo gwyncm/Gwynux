@@ -1,0 +1,21 @@
+#!/bin/sh
+# add a package and build file log
+mkdir /pkg 2>/dev/null
+for FILE 
+do 
+	dir=`pwd`
+	if [ -f $dir/$FILE ]
+	then
+		NAME=`echo $FILE | sed 's/.*\///' | sed 's/\.bin.tgz//' | sed 's/\.tgz//'` 
+		echo Adding package $NAME 
+		( 
+		cd /
+		tar zvxf $dir/$FILE > /pkg/$NAME 
+		[ -f install/doinst.sh ] && sh install/doinst.sh
+		[ -f install/doinst.sh ] && mv install/doinst.sh install/doinst.sh.$NAME
+		rm -f install/doinst.sh
+		/sbin/ldconfig
+		)
+	fi
+done
+

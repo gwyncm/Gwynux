@@ -1,0 +1,9 @@
+class taskmgr
+	{
+void	init(void);
+void	taskmsg(void);
+void	exit(void);
+void	start(void);
+void	exec(void);
+void	open_image(void);
+	};

@@ -1,0 +1,28 @@
+#! /bin/ash
+# start a shell
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+mount -t proc /proc	# busybox	
+cd /etc
+ash installmod
+while true
+do
+	echo; echo;
+	echo Welcome to the Gwynux main menu
+	echo type: cdboot to mount the cd
+	echo type: usbboot to mount the usb iso image
+	echo type: shell for a shell
+	echo
+	echo After the media is mounted
+	echo Type setup to begin
+	echo
+	echo 
+	read ANS REST
+	case "$ANS" in
+		shell)  exec ash ;;	# busybox
+		cdboot) exec ./cdboot ;;
+		usbboot) exec ./usbboot ;;
+		*) echo Unrecognized Command; echo ;;
+	esac
+done

@@ -1,0 +1,57 @@
+<html>
+<head><title>Toadware Technologies Inc. -Accounting System</title></head>
+<body>
+<H1>Accounting System - Expense Form </H1>
+Enter Expense entries and click submit.
+Click reset to clear form.
+<hr>
+<form action="/cgi-bin/account/expense" method="post">
+<table>
+<pre>
+<tr>
+<th>  Location: </th>
+<td><input type=text name=location value="Ottawa" size=20>
+<th>      Name: </th>
+<td><input type=text name=name value="" size=20>
+<tr>
+<th>  FromDate: </th>
+<td><input type=text name=fromdate value="" size=6>
+<th>    ToDate: </th>
+<td><input type=text name=todate value="" size=6>
+<tr>
+<th>      Days: </th>
+<td><input type=text name=days value="4" size=2>
+<th>   Perdiem: </th>
+<td><input type=text name=perdiem value="28" size=4>
+<tr>
+<th>      Desc: </th>
+<td><input type=text name=desc1 size=20>
+<th>    Amount: </th>
+<td><input type=text name=amount1 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc2 size=20>
+<th></th>
+<td><input type=text name=amount2 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc3 size=20>
+<th></th>
+<td><input type=text name=amount3 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc4 size=20>
+<th></th>
+<td><input type=text name=amount4 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc5 size=20>
+<th></th>
+<td><input type=text name=amount5 size=10>
+</pre>
+</table>
+<input type=submit value="Submit entry">
+<input type=reset value="Clear entry">
+</form>
+<hr>
+</body></html>

@@ -1,0 +1,10 @@
+taskmgr
+image
+remote
+socket
+basetab		basetab struct 
+basemgr		static base tables
+block		static instable
+browse		static buffer
+editor		static buffer
+compiler(s)	token table

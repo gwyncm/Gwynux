@@ -1,0 +1,32 @@
+#! /bin/sh
+# make a cd based system
+if [ X$1 = X ]
+then 
+	echo usage: $0 \</dev/target\> 
+	exit
+fi
+# Mount the target partition
+	mount $1 /mnt2 
+# Make the target directory.
+	mkdir /mnt2/gwynux
+# Make the target var directory
+mkdir /mnt2/gwynux/var
+# Copy the files from the current system
+cp -r /var/* /mnt2/gwynux/var
+# Link the system var directory to the new var 
+rm /var
+ln -sf /mnt2/gwynux/var /var
+# Remove the old rc.d directory
+mv /etc/rc.d /etc/rc.d.old
+mkdir /etc/rc.d
+cp -r /etc/rc.d.old/* /etc/rc.d 
+# Remove the /var/X11R6 directory, its a link.
+rm -rf /var/X11R6
+mkdir /var/X11R6
+# Remove /etc/X11 directory. It is recreated by Xwindows install.
+rm /etc/X11
+mkdir /etc/X11
+# Add install directory
+rm -rf /install
+mkdir /mnt2/install
+ln -sf /mnt2/install /install

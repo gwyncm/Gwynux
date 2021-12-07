@@ -1,0 +1,6 @@
+#! /bin/bash
+echo Content-type: text/html
+echo
+NUM=`wc -l /home/nobody/transact.log | awk '{ print $1 }'`
+NUM=`expr $NUM + 1`
+echo $NUM:E | awk -F: -f enter.awk type=enter

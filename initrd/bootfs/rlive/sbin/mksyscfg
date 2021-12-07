@@ -1,0 +1,22 @@
+#! /bin/sh
+# Sysconfig creation script
+# Make the directory
+mkdir /tmp/sysconfig
+# Build from inside
+cd /tmp/sysconfig
+# Make an etc
+mkdir etc
+# Copy current system files
+cp /etc/passwd etc
+cp /etc/shadow etc
+cp /etc/inittab etc
+cp /etc/fstab etc
+cp /etc/resolv.conf etc
+cp /etc/hosts etc
+cp /etc/HOSTNAME etc
+cp /etc/hostname.*  etc
+cp /etc/gateway.*  etc
+# Make the tgz
+tar zcf /sysconfig.tgz . 
+# Clean up
+rm -r /tmp/sysconfig

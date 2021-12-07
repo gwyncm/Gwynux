@@ -1,0 +1,25 @@
+#!/bin/sh
+# start stop dhcpd
+#
+case "$1" in
+'start')
+  	if [ -f /etc/dhcpd.conf ]
+	then
+		touch /var/state/dhcp/dhcpd.leases
+		/usr/sbin/dhcpd
+		exit $?
+	fi
+	;;
+'stop')
+  	if [ -f /etc/dhcpd.conf ]
+	then
+		/usr/bin/pkill dhcpd
+		exit $?
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 1

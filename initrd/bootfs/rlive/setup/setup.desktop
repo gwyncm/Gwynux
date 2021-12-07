@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+# set the x desktop
+#
+/usr/bin/dialog --title "Xwindows desktop" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Select the desktop you wish to use.\n\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice.\n\n" 20 65 6 \
+"Exit"		"Leave Desktop unchanged" \
+"Xfce"		"Xfce Desktop" \
+"Gnome"		"Gnome desktop" \
+"Kde"		"Kde desktop" \
+"Twm"		"Twm desktop" \
+"None"		"No desktop" 2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		[Xx]*)	echo exec xfce4-session > ~/.xinitrc ;;
+		[Gg]*)	echo exec gnome-session > ~/.xinitrc ;;
+		[Kk]*)	echo exec startkde > ~/.xinitrc ;;
+		[Tt]*)	echo exec twm > ~/.xinitrc ;;
+		[Nn]*)	rm ~/xinitrc ;;
+		[Ee]*)  clear ; exit ;;
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac

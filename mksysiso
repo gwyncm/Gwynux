@@ -1,0 +1,18 @@
+#! /bin/sh
+# Make a bootable iso image for isolinux
+if [ $# -lt 1 ]
+then 
+	echo Usage: $0 '<image.iso> [<isosubdir>]'
+	exit
+fi
+# default subdir to isolinux
+if [ $# -lt 2 ]
+then 
+	ISODIR=isolinux
+else
+	ISODIR=$2/isolinux
+fi
+rm -f $1 2>/dev/null
+osxbin/mkisofs -o $1 -R \
+   -b $ISODIR/isolinux.bin -c $ISODIR/boot.cat \
+   -no-emul-boot -boot-load-size 4 -boot-info-table .

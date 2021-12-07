@@ -1,0 +1,74 @@
+#!/bin/sh
+# mount/unmount file systems
+#
+case "$1" in
+'start')
+	# enable swapping
+  	echo "Enableing swap."
+	/sbin/swapon -a
+
+  	echo "Checking filesystems."
+ 	/sbin/fsck -A -a
+
+ 	# Remount the root filesystem read-write
+ 	echo "Remounting root device read-write."
+	mount -w -v -n -o remount /
+
+	# remove /etc/mtab* so that mount will create it with a root entry
+	/bin/rm -f /etc/mtab* /etc/nologin /etc/shutdownpid 
+
+	# mount file systems in fstab (and create an entry for /)
+	# exclude NFS because TCP/IP is not yet configured
+	mount -a -v -t nonfs
+
+	# Clean up temporary files on the /var volume:
+	/bin/rm -f /var/run/utmp /var/run/*.pid 
+
+	# Setup the /etc/motd to reflect the current kernel level:
+	echo "`/bin/uname -a | /bin/cut -d\  -f1,3`." > /etc/motd
+
+	# Set the hostname.  
+	/bin/hostname `cat /etc/HOSTNAME | /bin/cut -f1 -d .`
+
+	# Remove stale locks and junk files 
+	/bin/rm -f /var/lock/* /tmp/.X*lock /tmp/core /core \
+		1> /dev/null 2> /dev/null
+
+	# Ensure basic filesystem permissions sanity.
+	/bin/chmod 755 /
+	/bin/chmod 1777 /tmp /var/tmp
+
+	# Update all the shared library links 
+	/sbin/ldconfig 2>/dev/null
+	;;
+'stop')
+	# make sure all the processes are gone
+	echo "Killing processes."
+	/sbin/killall5 -15
+	sleep 5
+	/sbin/killall5 -9
+
+  	# Unmount any remote filesystems:
+  	echo "Unmounting remote filesystems."
+  	umount -a -r -tnfs
+
+  	# Turn off swap, then unmount local file systems.
+  	echo "Turning off swap."
+  	/sbin/swapoff -a
+  	echo "Unmounting local file systems."
+  	# Don't remount UMSDOS root volumes:
+  	if [ ! "`mount | head -1 | cut -d ' ' -f 5`" = "umsdos" ] 
+	then
+    		umount -a -r -tnonfs
+    		echo "Remounting root filesystem read-only."
+    		mount -n -o remount,ro /
+  	else
+    		umount -a -r -tnonfs -tnoumsdos
+  	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

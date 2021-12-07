@@ -1,0 +1,39 @@
+1:I:050201:Beginning Balance:1000:40569.43:0:0:3300
+2:I:050201:Beginning Balance:1200:0:0:0:3300
+3:E:050201:Beginning Balance:2000:2462.06:0:0:3300
+4:E:050201:Beginning Balance:2300:10000:0:0:3300
+5:E:070201:M Morrison:1000 Bank General:2450:0:0:2000::
+6:E:070208:Future Shop:2000 Accrued Expenses:125.39:6.60:0:6250 Other Office Expenses::
+7:E:070208:Staples:2000 Accrued Expenses:91.17:4.80:0:6250 Other Office Expenses::
+8:E:070208:Chapters:2000 Accrued Expenses:28.72:1.51:0:6235 Ref Books & Magazines::
+9:E:070216:NCF Office:2000 Accrued Expenses:35.99:0:0:6205 Telecommunications::
+10:E:070217:Domainsatcost:2000 Accrued Expenses:14.28:0:0:6205 Telecommunications::
+11:E:070214:PST Return (60):1000 Bank General:16:0:0:2300 Accounts Payable::
+12:E:070217:Fleet Pro Sound & Lighting inc:2000 Accrued Expenses:33.01:1.74:0:6250 Other Office Expenses::
+13:E:070217:Steves Music:2000 Accrued Expenses:222.25:11.70:0:6250 Other Office Expenses::
+14:I:070226:LTI 428 Ott:1000 Bank General:4840.60:273.99:0:4000 Sales Services:
+15:E:070226:GST Return (06):1000 Bank General:289.49:0:0:2300 Accounts Payable::
+16:E:070212:Bell Mobility:2000 Accrued Expenses:33.89:1.81:0:6205 Telecommunications::
+17:E:070216:Bell:2000 Accrued Expenses:78.03:4.11:0:6205 Telecommunications::
+18:E:070225:Rogers:2000 Accrued Expenses:103.18:5.44:0:6205 Telecommunications::
+19:E:070223:Canadian Tire:2000 Accrued Expenses:21.19:1.20:0:6250 Other Office Expenses::
+20:E:070205:Canadian Tire:2000 Accrued Expenses:11.39:0.60:0:6250 Other Office Expenses::
+21:E:070112:Ltree Ott 428:2000 Accrued Expenses:180.50:0:0:6325 Travel::
+22:E:070119:Ltree Ott 396:2000 Accrued Expenses:180.50:0:0:6325 Travel::
+23:E:070126:Ltree Ott 143:2000 Accrued Expenses:182.50:0:0:6325 Travel::
+24:E:070216:Ltree Ott 435:2000 Accrued Expenses:152.00:0:0:6325 Travel::
+25:I:070116:LTI 396:1000 Bank General:4840.60:237.99:0:4000 Sales Services:
+26:I:070123:LTI 143 Ott:1000 Bank General:4842.61:274.11:0:4000 Sales Services:
+27:E:070312:M Morrison:1000 Bank General:1500:0:0:2300 Accounts Payable::
+28:E:070312:M Morrison:1000 Bank General:2000:0:0:2000 Accrued Expenses::
+29:E:070312:M Morrison:1000 Bank General:1500:0:0:2300 Accounts Payable::
+30:I:070216:LTI 435 Ott:1000 Bank General:4811.98:272.38:0:4000 Sales Services:
+31:E:070311:Apple Store:2000 Accrued Expenses:1539.00:81.00:0:1510 Equipment::
+32:E:070312:Bell Mobility:2000 Accrued Expenses:32.83:1.78:0:6205 Telecommunications::
+33:E:070316:NCF Office:2000 Accrued Expenses:35.99:0:0:6205 Telecommunications::
+34:E:070316:Bell:2000 Accrued Expenses:78.03:4.11:0:6205 Telecommunications::
+35:E:070320:Canada Post:2000 Accrued Expenses:5.51:0.31:0:6210 Postage, Courier & Frght::
+36:E:070325:Rogers:2000 Accrued Expenses:102.61:5.41:0:6205 Telecommunications::
+37:E:070318:Home Depot:2000 Accrued Expenses:52.86:2.78:0:6250 Other Office Expenses::
+38:E:070323:LTI 428 Ottawa:2000 Accrued Expenses:182.00:0:0:6325 Travel::
+39:E:070327:LTI 144 Ottawa:2000 Accrued Expenses:152.00:0:0:6325 Travel::

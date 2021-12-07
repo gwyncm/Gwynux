@@ -1,0 +1,6 @@
+#! /bin/sh
+# make an installi.files list
+touch /tmp/newfile
+sleep 2
+make install
+find / -mount -newer /tmp/newfile > install.files

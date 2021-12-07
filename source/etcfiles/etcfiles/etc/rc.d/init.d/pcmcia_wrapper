@@ -1,0 +1,8 @@
+#! /bin/bash
+# pcmcia wrapper 
+if /sbin/modprobe yenta_socket > /dev/null 2>&1
+then
+	/etc/rc.d/init.d/pcmcia $*
+else
+	echo pcmcia not installed
+fi

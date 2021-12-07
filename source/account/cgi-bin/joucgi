@@ -1,0 +1,5 @@
+#! /bin/bash
+rm /home/nobody/journal.pre
+./acctcgi /home/nobody/journal.pre
+input=`awk -F: '{ print $1 }'  < /home/nobody/journal.pre`
+./journal $input

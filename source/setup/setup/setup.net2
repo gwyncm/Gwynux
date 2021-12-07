@@ -1,0 +1,19 @@
+2> /tmp/checklist.tmp.$$
+
+retval=$?
+
+case $retval in
+  0)
+    for mod in `cat /tmp/checklist.tmp.$$ | sed 's/"//g'`
+    do
+	echo $mod >> /tmp/netlist
+    done
+    rm -f /tmp/checklist.tmp.$$ ;;
+# /tmp/netlist contains list
+  1)
+    rm -f /tmp/checklist.tmp.$$ 
+    exit ;;
+  255)
+    rm -f /tmp/checklist.tmp.$$ 
+    exit ;;
+esac

@@ -1,0 +1,14 @@
+#! /bin/ash
+# start a shell
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+cd /etc
+ldconfig		# should work here
+mount -a 
+ash installmod
+#echo type: exec ./cdboot to mount the cd
+#echo type: init 2 to continue at that point
+echo Starting setup
+bash /sbin/setup 
+exec bash 

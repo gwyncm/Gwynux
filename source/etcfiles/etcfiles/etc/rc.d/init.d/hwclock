@@ -1,0 +1,24 @@
+#!/bin/sh
+# set/save hardware clock
+#
+case "$1" in
+'start')
+	if [ -f /sbin/hwclock ] 
+	then
+		echo 'Setting system clock from hardware clock.'
+		/sbin/hwclock --hctosys
+	fi
+	;;
+'stop')
+	if [ -f /sbin/hwclock ] 
+	then
+		echo 'Setting hardware clock from system clock.'
+		/sbin/hwclock --systohc
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

@@ -1,0 +1,23 @@
+#!/bin/sh
+# search for and load system config 
+#
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+for DEVICE in `fdisk -l | grep \
+	'^/dev' | grep -v swap | awk ' {print $1 }'` 
+do
+if mount $DEVICE /mnt 2>/dev/null
+then
+	if [ -s /mnt/sysconfig.tgz ]
+	then
+		cd  /
+		tar zxf /mnt/sysconfig.tgz
+		umount /mnt
+		exit
+	fi
+	umount /mnt
+else
+	echo Sysconfig: device not mounted
+fi
+done

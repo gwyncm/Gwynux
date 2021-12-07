@@ -1,0 +1,23 @@
+#! /bin/sh
+# Make a ramdisk on ram2 of size $1
+# boot linux with ramdisk_size=xxxxx
+#
+if [ X$1 = X ]
+then 
+	echo usage: $0 \<size\>
+	exit
+fi
+MEMSIZE=`cat /proc/meminfo | grep MemTotal | awk ' { print $2 } '`
+RDSIZE=`expr $MEMSIZE - 128000 `
+if [ $RDSIZE -lt 64000 ]
+then
+	echo Insufficent ram for ramdisk
+else
+	if [ $RDSIZE -gt 256000 ]
+	then
+		RDSIZE=256000
+	fi
+	echo Ramdisk size is $RDSIZE
+	dd if=/dev/zero of=/dev/ram2 bs=1k count=$RDSIZE
+	mke2fs -vm0 /dev/ram2 $RDSIZE 
+fi 

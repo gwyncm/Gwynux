@@ -1,0 +1,12 @@
+#! /bin/bash
+./acctcgi /home/nobody/transact.log
+RN=`awk -F: '{ print $1 }' /home/nobody/edit.pre`
+cp /home/nobody/transact.log /home/nobody/transact.bak
+sed "${RN}d" /home/nobody/transact.log > /home/nobody/transact.new
+sort -n /home/nobody/transact.new > /home/nobody/transact.log
+echo "<html>"
+echo "<head><title>Toadware Technologies Inc. -Accounting System</title></head>"
+echo "<body><hr><h3>"
+echo "Transaction accepted - click to "
+echo '<A href="/account/master.html" >Continue</a><br>'
+echo "<hr></body></html>"

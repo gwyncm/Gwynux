@@ -1,0 +1,63 @@
+#! /bin/sh
+#
+# Interface setup
+# 
+# get interface name
+#
+/usr/bin/dialog --title "Network Interface Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter interface name eg: eth0" 8 65 \
+"" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+INTERFACE=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+#
+# get interface address
+#
+HOSTNAME=none
+if [ -f /etc/hostname.$INTERFACE ]
+then 
+	HOSTNAME=`/bin/cat /etc/hostname.$INTERFACE` # remove trailing blanks
+fi
+ADDRESS=`grep $HOSTNAME /etc/hosts | awk ' { print $1 }' `
+/usr/bin/dialog --title "Network Interface Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter interface address or dhcp " 8 65 \
+"$ADDRESS" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+ADDRESS=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ "$ADDRESS" == "dhcp" ]
+then
+	echo dhcp > /etc/hostname.$INTERFACE
+	exit
+fi
+/usr/bin/dialog --title "Network Interface Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter interface hostname" 8 65 \
+"$HOSTNAME" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+HOSTNAME=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+echo $HOSTNAME > /etc/hostname.$INTERFACE
+cp /etc/hosts /etc/hosts.back
+sed /$HOSTNAME/d /etc/hosts.back > /etc/hosts
+echo $ADDRESS '	'$HOSTNAME >> /etc/hosts

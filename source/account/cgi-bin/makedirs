@@ -1,0 +1,7 @@
+#! /bin/bash
+if [ ! -d /usr/local/apache/cgi-bin/account ] ; then
+	mkdir /usr/local/apache/cgi-bin/account 
+fi
+if [ ! -d /usr/local/apache/htdocs/account ] ; then
+	mkdir /usr/local/apache/htdocs/account
+fi

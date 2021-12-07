@@ -1,0 +1,16 @@
+#! /bin/sh
+cp setup.pkg1 /tmp/setup.package
+if ( cd /gwynux ) 2>/dev/null
+then
+	for pkg in `(cd /gwynux; ls )`
+	do
+		echo '"'$pkg'" ""  off \'  >> /tmp/setup.package 
+	done
+	cat setup.pkg2 >>/tmp/setup.package
+	sh /tmp/setup.package
+else
+	clear
+	echo Invalid package directory
+	echo Press enter to continue
+	read rest
+fi

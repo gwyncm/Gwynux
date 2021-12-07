@@ -1,0 +1,22 @@
+#! /bin/sh
+# Mkremote sysconfig creation script
+# Make the directory
+mkdir sysconfig
+# Build from inside
+cd sysconfig
+# Make an etc
+mkdir etc
+# Copy current password/shadow
+cp /etc/passwd etc/password.new
+cp /etc/shadow etc/shadow.new
+# Copy network configuration files 
+cp /etc/resolv.conf etc
+cp /etc/hosts etc
+cp /etc/hostname.eth0 etc
+# Assume sysinstall is in starting directory
+cp ../sysinstall .
+# Make the tgz
+tar zcvf ../sysconfig.tgz . 
+# Clean up
+cd ..
+rm -r sysconfig

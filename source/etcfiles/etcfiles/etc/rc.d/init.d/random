@@ -1,0 +1,26 @@
+#!/bin/sh
+# start stop cron
+#
+case "$1" in
+'start')
+	# Carry an entropy pool between reboots to improve randomness.
+	# Load and then save 512 bytes, which is the size of the entropy pool.
+	if [ -f /etc/random-seed ] 
+	then
+		echo "Initializeing random seed."
+		cat /etc/random-seed >/dev/urandom
+	fi
+	dd if=/dev/urandom of=/etc/random-seed count=1 bs=512 2> /dev/null
+	;;
+'stop')
+  	# Carry a random seed between reboots.
+  	# Save 512 bytes, which is the size of the entropy pool.
+ 	echo "Saving random seed."
+	dd if=/dev/urandom of=/etc/random-seed count=1 bs=512 2> /dev/null
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

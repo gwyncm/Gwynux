@@ -1,0 +1,57 @@
+#! /bin/sh
+# Gwynux setup main script - run as root
+if id | grep -v 'uid=0' 
+then
+	echo Please enter root password to begin setup
+	echo Initial root password is gwynux
+	su - root -c /sbin/setup
+	exit
+fi
+# Set root password if not already set
+if [ -f /root/.password ]
+then
+	echo Please set the password for root
+	if passwd 
+	then
+		rm /root/.password
+	fi
+fi
+cd /setup
+while true
+do
+/usr/bin/dialog --title "Gwynux Setup Menu" \
+--backtitle "Gwynux Setup" \
+--menu \
+"Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice." 16 65 9 \
+"Exit"		"Exit Setup (no changes)" \
+"Install"	"Install Gwynux" \
+"Account"	"Setup a user account" \
+"Timezone" 	"Setup your timezone information" \
+"Package"	"Install an additional package" \
+"Network"	"Setup your network configuration" \
+"Xwin"		"Setup your Xwindows configuration" \
+"Runlevel"	"Set current/default init runlevel (reboot)" \
+"Sysconfig"	"Build a sysconfig file in the filesystem root" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		[Ee]*)	clear; exit ;;
+		[Ii]*)	./setup.install ;;
+		[Aa]*)	./setup.account ;;
+		[Tt]*)	clear; ./setup.tzselect ;;
+		[Pp]*)	./setup.package ;;
+		[Nn]*)	./setup.network ;;
+		[Xx]*)	./setup.xwin ;;
+		[Rr]*)	exec ./setup.init ;;
+		[Ss]*)	clear ; /sbin/mksyscfg ; echo Press enter to continue ; read rest ;;
+		*)	echo Unrecognized Command
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done

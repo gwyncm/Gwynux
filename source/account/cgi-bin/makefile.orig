@@ -1,0 +1,33 @@
+FLAGS =  -DUNIX  -I../image -I../object -I ../session
+
+BASEOBJS = \
+	htmldoc.o
+
+INCOBJS = \
+	htmldoc.cd
+
+APOBJS = \
+	pccgi.o pycgi.o
+
+all: libhts4.so pccgi pycgi htbase.pcp
+$(INCOBJS): %.cd: %.hpp
+	pc $< 
+$(BASEOBJS): %.o: %.cc %.hpp
+	gcc -fPIC -c $(FLAGS) -g $< 
+$(APOBJS): %.o: %.cc 
+	gcc -fPIC -c $(FLAGS) -g $< 
+libhts4.so : $(BASEOBJS) 
+	gcc -shared -o libhts4.so $(BASEOBJS) 
+htbase.pcp: $(INCOBJS)
+	cat *.cd > htbase.pcp
+pccgi: pccgi.o
+	gcc -g -rdynamic -lodo -lodi -lods -o pccgi pccgi.o
+pycgi: pycgi.o  
+	gcc -g -rdynamic -lodo -lodi -lods -o pycgi pycgi.o 
+clean:
+	rm *.o *.so pccgi pycgi htbase.pcp *.cd
+install: libhts4.so pccgi pycgi htbase.pcp
+	cp libhts4.so /usr/lib
+	mkdir -p /usr/local/apache/cgi-bin 
+	cp pccgi /usr/local/apache/cgi-bin 
+	cp pycgi /usr/local/apache/cgi-bin 

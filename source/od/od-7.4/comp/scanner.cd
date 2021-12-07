@@ -1,0 +1,11 @@
+class scanner
+	{
+void	init(void);
+void	set_line(void);
+void	get_type(void);
+void	get_offset(void);
+void	set_upper(void);
+void	get_next(void);
+void	lookup(void);
+void	set_code(void);
+	};

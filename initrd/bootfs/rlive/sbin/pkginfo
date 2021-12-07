@@ -1,0 +1,8 @@
+#! /bin/sh
+# list a files packages
+if [ X$1 = X ]
+then 
+	echo "usage: $0 <file>"
+	exit
+fi
+grep $1 /pkg/* | more

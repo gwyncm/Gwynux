@@ -1,0 +1,10 @@
+class sharemgr
+	{
+void	init(void);
+void	addobj(void);
+void	clearimage(void);
+void	lookup(void);
+void	getname(void);
+void	gettask(void);
+void	getobj(void);
+	};

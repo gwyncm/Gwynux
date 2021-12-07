@@ -1,0 +1,14 @@
+#! /bin/sh
+# create lilo.conf for new device
+echo boot=/dev/hda
+echo map=/boot/map
+echo install=/boot/boot.b
+echo backup=/boot/boot.0300
+echo default=Gwynux
+echo prompt
+echo lba32
+echo timeout=50
+echo image=/bzImage
+echo 	label=Gwynux
+echo 	root=$1
+echo 	read-only

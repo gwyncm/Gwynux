@@ -1,0 +1,24 @@
+#! /bin/sh
+#
+# Account setup
+#
+/usr/bin/dialog --title "User Account Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter user name to be created" 8 65 \
+"" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+USERNAME=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ "$USERNAME" == "" ]
+then
+	exit
+fi
+clear 
+useradd -m $USERNAME
+passwd $USERNAME

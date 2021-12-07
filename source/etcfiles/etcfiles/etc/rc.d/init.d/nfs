@@ -1,0 +1,52 @@
+#!/bin/sh
+# start stop nfs
+#
+case "$1" in
+'start')
+	NFSD=`/sbin/lsmod | /usr/bin/grep nfsd | /usr/bin/awk '{ print $1 }'` 
+	if [ -z "$NFSD" ]
+	then
+		# no nfsd inserted
+		echo NFS not started - no nfsd module.
+	else
+		# Start the SUN RPC Portmapper:
+  		NET=/sbin
+  		if [ -f ${NET}/rpc.portmap ]
+		then
+  			echo "Starting portmaper."
+    			${NET}/rpc.portmap
+  		fi
+  		# Start the NFS server daemons.
+  		NET=/usr/sbin
+  		if [ -f ${NET}/rpc.mountd ]
+		then
+    			echo "Starting mountd."
+    			${NET}/rpc.mountd
+  		fi
+		sleep 2
+  		if [ -f ${NET}/rpc.nfsd ]
+		then
+    			echo "Starting nfsd."
+    			${NET}/rpc.nfsd
+		fi
+  		if [ -f ${NET}/exportfs ]
+		then
+    			echo "Exporting filesystems."
+    			${NET}/exportfs -a
+		fi
+	fi
+	;;
+'stop')
+	if [ -f /sbin/portmap ]
+	then
+		echo 'Stoping nfs.'
+		/usr/bin/pkill rpc.mountd
+		/usr/bin/pkill rpc.portmap
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

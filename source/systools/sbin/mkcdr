@@ -1,0 +1,9 @@
+# cdrecord iso image from <isofile>
+if [ X$1 = X ]
+then 
+	echo usage: $0 \<isofile\>
+	exit
+fi
+cdburn on
+cdrecord -v -eject -pad speed=8 dev=0,0,0 -isosize $1 
+cdburn off

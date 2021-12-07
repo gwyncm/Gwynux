@@ -1,0 +1,8 @@
+dhcp-4.1.0.bin.tgz		-	doesn't work
+dhcp-4.1.0.tar.gz
+killall.bin.tgz			-	missing from procps
+ncurses-5.7.tar.gz		-	won't compile
+procps-3.2.8.bin.tgz
+procps-3.2.8.tar.gz
+sysklogd-1.5.bin.tgz		-	won't work on 2.4
+sysklogd-1.5.tar.gz

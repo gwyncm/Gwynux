@@ -1,0 +1,5 @@
+live / auto defaults 1 1
+/cdrom iso9660 ro,user,noauto,unhide 1 1
+none /dev/pts devpts mode=0620 0 0
+none /proc proc defaults 0 0
+none /sys sysfs defaults 0 0

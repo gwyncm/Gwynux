@@ -1,0 +1,11 @@
+#! /bin/sh
+# diff entire system to extract added files 
+# new file list is written to install.files
+# assumes previous list in basefiles in current directory
+# todo: look for modified files (not common)
+#
+find / -mount > /tmp/basefiles
+make install
+find / -mount > /tmp/basefiles.new
+diff --suppress-common-lines /tmp/basefiles /tmp/basefiles.new \
+ | grep '^>' | sed 's/> //' > install.files

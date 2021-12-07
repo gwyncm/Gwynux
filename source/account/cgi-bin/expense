@@ -1,0 +1,5 @@
+#! /bin/bash
+rm /home/nobody/expense.pre
+./acctcgi /home/nobody/expense.pre
+awk -F: -f expense.awk < /home/nobody/expense.pre 
+awk -F: -f expense.awk < /home/nobody/expense.pre > /home/nobody/expense.html

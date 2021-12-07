@@ -1,0 +1,41 @@
+#! /bin/sh
+#
+# Interface gateway setup
+# 
+# get interface name
+#
+/usr/bin/dialog --title "Network Interface Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter interface name eg: eth0" 8 65 \
+"" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+INTERFACE=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+#
+# get interface gateway
+#
+GATEWAY=
+if [ -f /etc/gateway.$INTERFACE ]
+then 
+	GATEWAY=`/bin/cat /etc/gateway.$INTERFACE` # remove trailing blanks
+fi
+/usr/bin/dialog --title "Network Interface Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter interface gateway" 8 65 \
+"$GATEWAY" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+GATEWAY=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+echo $GATEWAY > /etc/gateway.$INTERFACE

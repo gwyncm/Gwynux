@@ -1,0 +1,37 @@
+#! /bin/sh
+# make target file structure
+# pass install directory as argument
+#
+if [ ! -f $1/install.files ] 
+then 
+	exit
+fi 
+rm -r target 
+mkdir target
+for FILE in `cat $1/install.files` 
+do
+	if [ -d $FILE ]
+	then 
+		mkdir -p target$FILE
+	else	
+#
+# added to handle unmade directories
+#
+		if cp -d $FILE target$FILE 2>/dev/null
+		then 
+			echo -n
+		else
+			FNAME=`echo $FILE | sed 's/.*\///'`
+			DIR=`echo $FILE | sed "s/$FNAME//"`
+			echo making $DIR 
+			mkdir -p target$DIR
+			cp -d $FILE target$FILE
+		fi
+	fi
+done
+FNAME=`echo $1 | sed 's/.*\///'`
+echo making $FNAME
+cd target 
+tar zcf ../$FNAME.bin.tgz .
+cd ..
+rm -r target

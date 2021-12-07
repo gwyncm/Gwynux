@@ -1,0 +1,27 @@
+#! /bin/sh
+# Run start stop for runlevel $1
+#
+if [ $# -lt 1 ] 
+then 
+	echo Usage: $0 runlevel
+	exit 
+fi
+echo Running init level change for level $1
+if [ -d /etc/rc.d/rc$1.d ]
+then
+	for f in /etc/rc.d/rc$1.d/K*
+	do
+		[ ! -f $f ] && continue
+		echo Killing `basename ${f} | sed 's/[KS][0-9][0-9]//'`.
+		/bin/sh ${f} stop
+	done
+fi
+if [ -d /etc/rc.d/rc$1.d ]
+then
+	for f in /etc/rc.d/rc$1.d/S*
+	do
+		[ ! -f $f ] && continue
+		echo Starting `basename ${f} | sed 's/[KS][0-9][0-9]//'`.
+		/bin/sh ${f} start
+	done
+fi

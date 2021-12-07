@@ -1,0 +1,11 @@
+#! /bin/sh
+# Create network interface list
+#
+cp setup.net1 /tmp/setup.network
+> /tmp/netlist # empty list
+for iface in `( cd /etc/ ; ls hostname* | sed 's/hostname\.//')`
+do
+	echo $iface | sed 's/^/"/' | sed 's/$/" "" off \\/' >> /tmp/setup.network
+done
+cat setup.net2 >>/tmp/setup.network
+sh /tmp/setup.network

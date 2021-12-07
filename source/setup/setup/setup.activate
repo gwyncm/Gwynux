@@ -1,0 +1,36 @@
+#! /bin/sh
+# Activate a prebuilt direct partition
+#
+fdisk -l | grep '^/dev.*Linux' > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Device Selection" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter the device name for activation eg: /dev/hda1 \n\
+`cat < /tmp/list.tmp.$$` " 20 65 \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+DEV=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ X$DEV == X ]
+then
+	clear
+	exit
+fi
+#
+clear
+# reset to cdrom
+/bb/bin/rm /live
+/bb/bin/ln -s /cdrom/live /live
+umount /mnt2 2>/dev/null
+if mount $DEV /mnt2
+then
+	/bb/bin/rm /live
+	/bb/bin/ln -s /mnt2 /live
+fi
+echo Press return to continue
+read rest

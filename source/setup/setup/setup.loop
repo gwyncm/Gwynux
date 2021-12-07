@@ -1,0 +1,34 @@
+#! /bin/sh
+#
+# Gwynux loop installation script
+#
+# Device selection
+#
+> /tmp/list.tmp.$$
+/usr/bin/dialog --title "File Selection" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter the filename for loop installation eg: loopfs \n\
+`cat < /tmp/list.tmp.$$` " 20 65 \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+DEV=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+clear
+if [ X$DEV == X ]
+then
+	exit
+fi
+#
+# call bxinstall
+#
+echo Enter filesystem size in kbytes
+read SIZE rest
+/sbin/bxinstall $DEV $SIZE 
+echo Press return to continue
+read rest

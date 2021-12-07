@@ -1,0 +1,9 @@
+#! /bin/bash
+# Produce CCA report
+# cca.pre is previous cca.mid with 6000 accts removed
+./unwind /home/nobody/transact.log | 
+grep '^15' |			# Collect CCA records from current transactions
+cat  > cca.new 			# Save in cca.new (new this year)
+cat cca.pre cca.new |		# Include previous and current in report
+awk -F: -f ccarep.awk |		# Run the report awk script
+grep -v '^@'			# Remove marked previous records

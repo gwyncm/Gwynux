@@ -1,0 +1,2 @@
+#! /bin/bash
+awk -F^ '{ print ++num":"$1 }' /home/nobody/transact.log  

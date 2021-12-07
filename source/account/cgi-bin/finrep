@@ -1,0 +1,14 @@
+#! /bin/bash
+# Produce financial statements report
+./unwind /home/nobody/transact.log |	# From current transactions 
+grep -v '^15' |				# Select non CCA records
+cat  > finrep.pre 			# Save in finrep.pre
+./unwind /home/nobody/transact.log | 	# From current transactions	
+grep '^15' | 				# Select CCA records
+cat  > cca.new 				# Save in cca.new
+cat cca.new cca.pre | 			# Using previous and new CCA records
+awk -F: -f ccarep.awk |			# Run CCA report
+grep  '^@' | sed 's/^@//' |		# Select totals only 
+cat > cca.mid				# Store in cca.mid
+cat finrep.pre cca.mid |		# Using cca.mid and finrep.pre
+awk -F: -f finrep.awk 			# Produce financial statements

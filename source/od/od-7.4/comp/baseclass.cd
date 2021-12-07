@@ -1,0 +1,4 @@
+class baseclass
+	{
+void	init(void);
+	};

@@ -1,0 +1,26 @@
+#! /bin/sh
+#
+# Nodename setup
+#
+NODENAME=`/bin/cat /etc/HOSTNAME | /usr/bin/awk ' { print $1 } ' | \
+/usr/bin/awk -F. '{ print $1 }'`
+echo $NODENAME > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Nodename Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter your system nodename " 8 65 \
+"`cat < /tmp/list.tmp.$$`" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+NODENAME=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ "$NODENAME" == "" ]
+then
+	exit
+fi
+echo $NODENAME > /etc/HOSTNAME

@@ -1,0 +1,47 @@
+#
+# main system classes
+#
+defclass	''	'Class class'
+taskmgr		'TM'	'System task manager'
+#
+# relational engine classes
+#
+#table		''	'RDB table class'
+#view		''	'RDB view class'
+#function	''	'Report function'
+#repsym		''	'Report symbol'
+#report		''	'Report Writer'
+#sfile		''	'Stream file'
+#folder		''	'Folder Viewer'
+#browse		''	'Text browser class'
+#editor		''	'Text editor class'
+#
+# ui classes
+#
+#display		''	'UI display class'
+#button		''	'UI button class'
+#form		''	'UI form class'
+#icon		''	'UI icon class'
+#menu		''	'UI menu class'
+#formkey		''	'UI formkey class'
+#ckbox		''	'UI ckbox class'
+#shape		''	'UI shape class'
+#sbar		''	'UI Scroll Bar'
+#field		''	'UI field class'
+#graph		''	'Graph class'
+#frame		''	'Frame class'
+#
+#	accounting classes
+#
+#transact	'TR'	'Account Transaction '
+#account		'AC' 	'Account class'
+#capital		''	'Capital Class'
+#asset		''	'Asset Class'
+#tax1997		''	'Tax 1997 Class'
+#ltinv		''	'LT invoice Class'
+#invoice		''	'Invoice Class'
+#expense		''	'Expense Class'
+#
+#	htmlgen classes
+#
+htmldoc		''	'HTML Document'

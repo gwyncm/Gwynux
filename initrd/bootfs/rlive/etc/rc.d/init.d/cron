@@ -1,0 +1,24 @@
+#!/bin/sh
+# start stop cron
+#
+case "$1" in
+'start')
+  	if [ -x /usr/sbin/crond ]
+	then
+		/usr/sbin/crond -l10 >>/var/adm/cron 2>&1
+		exit $?
+	fi
+	;;
+'stop')
+  	if /usr/bin/pgrep crond
+	then
+		/usr/bin/pkill crond
+		exit $?
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 1

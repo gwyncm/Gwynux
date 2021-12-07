@@ -1,0 +1,9 @@
+class syslog
+	{
+void	init(void);
+void	set_echo(void);
+void	log_error(void);
+void	log_message(void);
+void	get_errors(void);
+void	set_file(void);
+	};

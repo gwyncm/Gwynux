@@ -1,0 +1,39 @@
+#! /bin/sh
+# Gwynux install options
+#
+while true
+do
+/usr/bin/dialog --title "Gwynux Installation" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice." 16 65 8 \
+"Exit"		"Exit Install (no changes)" \
+"Ramdisk"	"Create ramdisk on /dev/ram2" \
+"Fdisk"		"Run Fdisk to setup your disk partitions" \
+"Parted"	"Run Parted to setup your disk partitions" \
+"Swap"		"Setup swap space" \
+"Basic"		"Perform basic partition installation" \
+"Loop"		"Perform Loop filesystem installation" \
+"Activate"	"Activate installed root file system" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		[Ee]*)	clear; exit ;;
+		[Rr]*)	clear; mkramd 128000; echo Press return; read rest ;;
+		[Ff]*)	clear; fdisk /dev/hda ;;
+		[Pp]*)	clear; parted  ;;
+		[Ss]*)	./setup.swap ;;
+		[Bb]*)	./setup.basic ;;
+		[Ll]*)	./setup.loop ;;
+		[Aa]*)	./setup.activate ;;
+		*)	echo Unrecognized Command
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done

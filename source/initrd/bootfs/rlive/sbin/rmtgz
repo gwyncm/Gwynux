@@ -1,0 +1,25 @@
+#! /bin/sh
+# remove target file structure
+# pass tgz file as argument
+#
+if [ ! -f $1 ] 
+then 
+	echo usage: $0 installed.tgz
+	exit
+fi 
+for FILE in `tar ztf $1` 
+do
+	if [ ! -d $FILE ]
+	then 
+		echo removing $FILE
+		rm $FILE 2>/dev/null
+	fi
+done
+for FILE in `tar ztf $1 | sort -r` 
+do
+	if [ -d $FILE ]
+	then 
+		echo removing $FILE
+		rmdir $FILE 
+	fi
+done

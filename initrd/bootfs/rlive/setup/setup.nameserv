@@ -1,0 +1,27 @@
+#! /bin/sh
+#
+# Nameserver setup
+#
+NAMESERV=`/usr/bin/grep nameserver /etc/resolv.conf | \
+awk ' { print $2 } ' 2> /dev/null`
+echo $NAMESERV > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Nameserver Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter your network nameserver " 8 65 \
+"`cat < /tmp/list.tmp.$$`" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+NAMESERV=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ "$NAMESERV" != "" ]
+then
+	sed '/nameserver/d' /etc/resolv.conf > /tmp/resolv.conf
+	mv /tmp/resolv.conf /etc/resolv.conf
+	echo nameserver $NAMESERV >> /etc/resolv.conf
+fi

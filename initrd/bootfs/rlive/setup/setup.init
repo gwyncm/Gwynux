@@ -1,0 +1,44 @@
+#! /bin/sh
+# Gwynux init setup
+while true
+do
+/usr/bin/dialog --title "Gwynux System run Level" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Set the current and default run level.\n\
+Only those levels noted will be made default.\n\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice.\n\n" 20 65 7 \
+"E"	"Exit runlevel setup (no change)" \
+"1"	"Single user mode" \
+"2" 	"Multi user without networking (default)" \
+"3"	"Multi user with networking (default)" \
+"4"	"X GDM Session (default)" \
+"6"	"Reboot system" \
+"0"	"System shutdown and power off" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		0)	clear; init 0 ; exit ;;
+		1)	clear; init 1 ; exit ;;
+		2)	sed 's/^id:[1234]/id:2/' /etc/inittab > /tmp/inittab
+			cp /tmp/inittab /etc/inittab
+			clear; init 2 ; exit ;;
+		3)	sed 's/^id:[1234]/id:3/' /etc/inittab > /tmp/inittab
+			cp /tmp/inittab /etc/inittab
+			clear; init 3 ; exit ;;
+		4)	sed 's/^id:[1234]/id:4/' /etc/inittab > /tmp/inittab
+			cp /tmp/inittab /etc/inittab
+			clear; init 4 ; exit ;;
+		6)	clear; init 6 ; exit ;;
+		[Ee]*)  clear; exit ;;
+		*)	echo Unrecognized Command
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done

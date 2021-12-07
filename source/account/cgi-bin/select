@@ -1,0 +1,13 @@
+#! /bin/bash
+rm /home/nobody/select.pre
+./acctcgi /home/nobody/select.pre
+cd /home/nobody
+FILE=`awk -F: '{ print $1 }' select.pre`
+rm transact.log
+ln -s $FILE transact.log
+echo "<html>"
+echo "<head><title>Toadware Technologies Inc. -Accounting System</title></head>"
+echo "<body><hr><h3>"
+echo "File Selected- click to "
+echo '<A href="/account/master.html" >Continue</a><br>'
+echo "<hr></body></html>"

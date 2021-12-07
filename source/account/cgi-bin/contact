@@ -1,0 +1,10 @@
+#! /bin/bash
+rm /home/nobody/message.pre
+account/acctcgi /home/nobody/message.pre
+email=`awk -F: '{ print $1 } ' < /home/nobody/message.pre`
+echo 'subject: contact' > /home/nobody/message.pre1
+echo from: $email >> /home/nobody/message.pre1
+tr ':' ' ' < /home/nobody/message.pre >> /home/nobody/message.pre1
+echo '.' >> /home/nobody/message.pre1
+/usr/local/sbin/sendmail gwynethm@toadware.ca < /home/nobody/message.pre1
+echo Message accepted - press BACK to continue

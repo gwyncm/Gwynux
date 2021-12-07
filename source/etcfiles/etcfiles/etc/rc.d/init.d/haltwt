@@ -1,0 +1,4 @@
+#!/bin/sh
+# halt wtmp
+#
+/sbin/poweroff -w

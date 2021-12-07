@@ -1,0 +1,4 @@
+#!/bin/sh
+# reboot the wtmp 
+#
+/sbin/reboot -w

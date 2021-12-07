@@ -1,0 +1,17 @@
+#! /bin/bash
+rm /home/nobody/edit.pre
+./acctcgi /home/nobody/edit.pre
+RN=`awk -F: '{ print $1 }' /home/nobody/edit.pre`
+MAX=`wc -l /home/nobody/transact.log | awk '{ print $1 }'`
+if [ 0 -lt $RN  -a $MAX -ge $RN ]
+then
+	sed -n "${RN}p" /home/nobody/transact.log | 
+	awk -F: -f enter.awk type=update
+else
+	echo "<html><head>"
+	echo "<title>Toadware Technologies Inc. -Accounting System</title></head>"
+	echo "<body><hr><h3>"
+	echo "Please Enter Valid Record Number - click to "
+	echo '<A href="/account/master.html" >Continue</a><br>'
+	echo "<hr></body></html>"
+fi

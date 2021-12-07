@@ -1,0 +1,61 @@
+<html>
+<head><title>Toadware Technologies Inc. -Accounting System</title></head>
+<body>
+<H1>Accounting System - Invoice Form </H1>
+Enter Invoice details and click submit.
+Click reset to clear form.
+<hr>
+<form action="/cgi-bin/account/invoice" method="post">
+<table>
+<pre>
+<tr>
+<th>        To: </th>
+<td><input type=text name=to1  size=40>
+<th>      Date: </th>
+<td><input type=text name=date value="999999" size=6>
+<tr>
+<th>        </th>
+<td><input type=text name=to2  size=40>
+<tr>
+<th>        </th>
+<td><input type=text name=to3  size=40>
+<tr>
+<th>        </th>
+<td><input type=text name=to4  size=40>
+<tr>
+<th>       PST: </th>
+<td><input type=text name=pst value="0" size=6>
+<th>       GST: </th>
+<td><input type=text name=gst value="0" size=6>
+<tr>
+<th>      Desc: </th>
+<td><input type=text name=desc1 size=40>
+<th>    Amount: </th>
+<td><input type=text name=amount1 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc2 size=40>
+<th></th>
+<td><input type=text name=amount2 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc3 size=40>
+<th></th>
+<td><input type=text name=amount3 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc4 size=40>
+<th></th>
+<td><input type=text name=amount4 size=10>
+<tr>
+<th></th>
+<td><input type=text name=desc5 size=40>
+<th></th>
+<td><input type=text name=amount5 size=10>
+</pre>
+</table>
+<input type=submit value="Submit entry">
+<input type=reset value="Clear entry">
+</form>
+<hr>
+</body></html>

@@ -1,0 +1,16 @@
+# dhcpd.conf
+#
+# Configuration file for ISC dhcpd (see 'man dhcpd.conf')
+#
+default-lease-time 6000;
+max-lease-time 7200;
+ddns-update-style ad-hoc;
+option subnet-mask 255.255.255.0;
+option broadcast-address 192.168.10.255;
+option routers 192.168.10.2;
+option domain-name-servers 192.168.10.2;
+option domain-name "toadware.ca";
+ 
+  subnet 192.168.10.0 netmask 255.255.255.0 {
+  range 192.168.10.32 192.168.10.39;
+}

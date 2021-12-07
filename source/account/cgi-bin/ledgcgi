@@ -1,0 +1,5 @@
+#! /bin/bash
+rm /home/nobody/ledger.pre
+./acctcgi /home/nobody/ledger.pre
+acct=`awk '{ print $1 }'  < /home/nobody/ledger.pre`
+./ledger $acct

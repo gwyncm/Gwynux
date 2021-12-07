@@ -1,0 +1,36 @@
+#! /bin/ash
+# mount a cd for live
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+#mount -t proc /proc	# busybox	
+cd /etc
+#ash installmod
+for DEV in /dev/hda /dev/hdb /dev/hdc /dev/hdd
+do
+	if mount  $DEV /cdrom
+	then
+		if [ -x /sbin/init ]
+		then
+			exec /sbin/init
+		fi
+	else
+		umount /cdrom 
+	fi
+done
+echo Waiting for scsi subsystem
+sleep 5s
+for DEV in /dev/sr0 /dev/sr1 /dev/sr2 /dev/sr3
+do
+	if mount  $DEV /cdrom
+	then
+		if [ -x /sbin/init ]
+		then
+			exec /sbin/init
+		fi
+	else
+		umount /cdrom 
+	fi
+done
+echo No cd image found
+exec ash 		# busybox

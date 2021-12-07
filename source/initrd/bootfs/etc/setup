@@ -1,0 +1,10 @@
+#! /bin/ash
+# mount a cd for live
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+#mount -t proc /proc	# busybox	
+cd /etc
+#ash installmod
+ash /sbin/setup
+#exec ash

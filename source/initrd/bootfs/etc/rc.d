@@ -1,0 +1,1 @@
+/live/etc/rc.d

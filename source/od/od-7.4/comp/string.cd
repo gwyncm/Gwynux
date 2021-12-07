@@ -1,0 +1,8 @@
+class string
+	{
+void	init(void);
+void	setmax(void);
+void	setlen(void);
+void	system(void);
+void	getlen(void);
+	};

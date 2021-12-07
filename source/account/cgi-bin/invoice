@@ -1,0 +1,5 @@
+#! /bin/bash
+rm /home/nobody/invoice.pre
+./acctcgi /home/nobody/invoice.pre
+awk -F: -f invoice.awk < /home/nobody/invoice.pre 
+awk -F: -f invoice.awk < /home/nobody/invoice.pre > /home/nobody/invoice.html

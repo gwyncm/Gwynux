@@ -1,0 +1,251 @@
+1: Introducing Object Director
+	1.0: Xwindows development tool
+		1.0.0: Advantages
+	1.1: System overview
+	1.2: The Task Manager
+		1.2.0: The task display
+		1.2.1: Image options
+2: Building an application
+	2.2: Working with multiple images
+	2.3: Development process overview
+		2.3.0: Building the user interface
+		2.3.1: Adding methods
+		2.3.2: Manipulating objects
+		2.3.3: Testing and debugging
+		2.3.4: Runtime packaging
+	2.4: Building an object director application	
+		2.4.0: Creating an image
+		2.4.1: Building the user interface
+		2.4.2: Setting user interface attributes
+		2.4.3: Adding the methods
+		2.4.4: Testing and debugging
+		2.4.5: Producing a Runtime version
+3: The Object Director Method Language
+	3.0: What is a method
+	3.1: Using the Editor
+	3.2: Setting methods for classes
+	3.3: Keyboard shortcuts
+	3.4: Editor options
+	3.5: Control constructs
+		3.5.0: The ifTrue statement
+		3.5.1: The ifFalse statement
+		3.5.2: The Repeat statement
+		3.5.3: The Select statement
+		3.5.4: The whileTrue statement
+		3.5.5: The Do statement
+	3.6:  Cascading 
+	3.7:  Expressions
+	3.8:  Return codes
+	3.9:  Creating an image with the compiler
+	3.10: Compiler directives	
+	3.11: Other Language options
+4: Object Director Variable classes
+	4.0: Example Variable access
+	4.1: The Integer class
+	4.2: The Float class
+	4.3: The String class
+	4.4: The Date class
+	4.5: Creating variable objects
+	4.6: The rules of scope
+		4.6.0: Global objects
+		4.6.1: Local objects
+	4.7: Arrays
+	4.8: User defined types/classes
+	4.9: Passing variable arguments
+5: The User Interface Classes
+	5.0: The Display container 
+		5.0.0: The display window
+		5.0.1: Display options
+	5.1: Creating a Display
+	5.2: Altering Display Attributes
+		5.2.0: setborder
+		5.2.1: setattr
+		5.2.2: setnumber
+		5.2.3: setlength
+		5.2.4: setrow
+		5.2.5: setcol
+		5.2.6: settitle
+		5.2.7: setmap
+		5.2.8: setvisible
+		5.2.9: seticon
+	5.3: Mouse events
+	5.4: Keyboard events
+	5.5: Controlling focus
+	5.6: Creating a form
+		5.6.0: The form window
+		5.6.1: Form options
+	5.7: Adding a form to a display
+	5.8: Altering Form attributes
+		5.8.0: setlines
+		5.8.1: setmode
+		5.8.2: setobject
+		5.8.3: setfield
+		5.8.4: setvisible
+		5.8.5: setline
+	5.9:  Setting fonts
+	5.10: Adding form keys
+	5.11: Adding fields
+	5.12: The field window
+	5.13: Setting field attributes
+		5.13.0:  fsetx
+		5.13.1:  fsety
+		5.13.2:  fsettext
+		5.13.3:  fsetcol
+		5.13.4:  fsetrow
+		5.13.5:  fsetlength
+		5.13.6:  fsetattr
+		5.13.7:  fsetsattr
+		5.13.8:  fsetnumber
+		5.13.9:  fsettype
+		5.13.10: fsetanumber
+		5.13.11: fsetatext
+		5.13.12: fsetvisible
+6: Adding Buttons, Icons and Shapes
+	6.0: Creating a Button
+	6.1: The button display window
+	6.2: Altering Button attributes
+		6.2.0:  setcol 
+		6.2.1:  setrow 
+		6.2.2:  setlength 
+		6.2.3:  setnumber 
+		6.2.4:  setattr 
+		6.2.5:  setborder 
+		6.2.6:  setx 
+		6.2.7:  sety 
+		6.2.8:  setname 
+		6.2.9:  setvisible 
+		6.2.10: setobject 
+		6.2.11: setline 
+		6.2.12: setattra 
+		6.2.13: setattrv 
+		6.2.14: setaname 
+		6.2.15: setmessage 
+		6.2.16: setmobject 
+	6.2: Creating an Icon
+		6.2.0: The Icon editor	
+	6.3: Altering Icon attributes
+		6.3.0: load	
+		6.3.1: save
+		6.3.2: setname
+		6.3.3: setcolour
+	6.4: Creating a shape
+		6.4.0: The Shape window
+		6.4.1: The Shape editor
+	6.5: Altering Shape attributes
+		6.5.0: setx1
+		6.5.1: sety2
+		6.5.2: setx2
+		6.5.3: sety2
+		6.5.4: setr
+		6.5.5: settype
+		6.5.6: movex
+		6.5.7: movey
+		6.5.8: clear
+		6.5.9: redraw
+	6.6:  Customizing the toolbox
+	6.7:  Allignment grid
+	6.8:  Scroll bars
+	6.9:  Check boxes
+	6.10: Radio group
+	6.11: Colour group programming
+	6.12: Tabbed displays
+	5.13: The graph class
+	6.14: controlling focus
+7: Menus and Toolbars
+	7.0: Creating a Menu
+		7.0.0: The Menu editor
+		7.0.1: Menu Keys
+	7.1: Altering Menu attributes
+		7.1.0: additem
+		7.1.1: delitem
+		7.1.2: setrow
+		7.1.3: setcol
+		7.1.4: setattr
+		7.1.5: setsattr
+		7.1.6: setx
+		7.1.7: sety
+		7.1.8: setvisible
+	7.2: Creating Menu items
+		7.2.0: setting the text
+		7.2.1: setting the function
+	7.3: Creating a Toolbar
+		7.3.0: Adding an icon
+		7.3.1: Removeing an icon
+		7.3.2: Positioning
+		7.3.3: Setting captions
+8: Handling errors
+	8.0: Compiler errors	
+	8.1: Runtime errors
+9: Creating external classes
+	9.0: Required external Class Methods
+	9.1: Building a loadable external Class
+	9.2: Accessing the external Class
+10: Creating Objects and Classes
+	10.0: Object principals
+	10.1: Examining system Objects
+	10.2: Creating Classes
+		10.2.0: Adding Attributes to a class
+		10.2.1: Adding methods to a class
+	10.3: Class initialization 
+	10.4: Creating an example Class
+		10.4.0: Adding Attributes to the Class
+		10.4.1: Adding Methods to the Class
+		10.4.2: Modifying Attributes
+		10.4.3: Adding A Constructor to the Class
+		10.4.4: Adding A Destructor to the Class
+	10.5: Examining Classes  
+		10.5.0: The Class browser
+11: Working with Collections
+	11.0: The Display Collection 
+	11.1: Working with Groups
+		11.1.0: Creating a Group
+		11.1.1: Adding Objects to the Group
+		11.1.2: Counting Objects 
+		11.1.3: Accessing members of a Group
+		11.1.4: Removing Members from a Group
+		11.1.5: Destroying the Group
+	11.2: Custom Collections
+		11.2.0: Creating a custom Collection
+		11.2.1: Specifying the ADD Method
+		11.2.1: Specifying the REMOVE Method
+12: Accessing data
+	12.0: Accessing files
+		12.0.0: The file class
+		12.0.1: The file browser
+		12.0.2: The Browser Class
+		12.0.3: The Editor Class
+	12.1: Accessing the Relational Classes
+		12.1.1: Relational principals
+	12.2: The Table class
+		12.2.0: Creating a Table
+		12.2.1: Accessing a Table
+	12.3: Multi line Tables	
+		12.3.0: The Page class
+		12.3.1: Accessing a Page
+	12.4: The view class
+		12.4.0: Creating a View
+		12.4.1: Adding tables to a View
+		12.4.2: Specifing Relationships
+		12.4.3: Constructing Queries
+		12.4.4: Producing Output
+	12.5: The SQL Compiler
+13: Printed output
+	13.0: Printer access
+	13.1: Using the Report Writer
+		13.1.0: Report Writer basics 
+	13.2: Creating a Report
+		13.2.0: The report designer
+		13.2.1: Input file layout
+		13.2.2: The Report body
+		13.2.3: The Report Headers
+		13.2.4: Calculations
+		13.2.5: The preview window
+	13.3: Running reports
+14: Remote object manipulation
+	14.1: Defining a remote Object
+	14.2: Specifying the server
+	14.3: Server security
+15: Web development with Object Director
+	15.0: The CGI interface
+	15.1: Building a web application
+	15.2: Web security issues

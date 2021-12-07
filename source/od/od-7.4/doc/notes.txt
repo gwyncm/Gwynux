@@ -1,0 +1,96 @@
+Application generator:
+
+B	alternatives for better blocking support in xwindows 
+	sbar up/down is not working 
+
+Feature list: 
+
+A	expandable fields for long strings
+A	investigate fonts and more colours
+B	add netseg builder
+
+A	subclass winmgr for different implementations
+B	make ui drivers dynamically loadable
+
+	remove db references from ui objects - mem based only
+	compiler used to configure memory based objects
+
+Engine:	
+
+X	compiler does not recognise /*
+X	comment slashes recognised in char strings
+
+Feature list:
+	
+
+A	explicitly instantiate objects within language
+A	complete addition of control constructs
+A	Create and manipulate objects within language
+A	Turn compilers into selectable objects
+
+B	check priority and usleep 
+B	consider fork for processes
+B	consider timer queue
+B	Move task control into the language
+
+B	considder options for object reuse after delete
+
+	make images pageable as an addon and test
+	use threads for context in server
+	multi task blocks by instruction
+	persistant sets
+	index class
+	table class
+	array class
+	transactions
+	object delete
+	make table storage as an option in image
+	readd pint
+
+Remote 
+
+B	server selection for remote applications
+B	make server mode transparent - local mode default 
+B	included code can run on application server
+B	support for multiple server threads/users/validation
+B	generalized messageing service for remote loads
+B	make servers dynamically loadable 
+	add shell command and remote modes
+
+Accounting: 
+	
+B	finish capital and asset applications
+B	add more support for capital in accounting
+
+B	delete entry
+
+B	add account number to ledger report
+
+Database:
+
+Report:
+
+B	rework report writer classes to better fit with engine
+B	integrate report writer functions for expressions
+	allow delete headers in report writer
+
+Table:
+
+B	table delete command (imbed record number)
+	not/sql query language
+
+
+View:
+
+A	set delete and update commands
+A	view copy field command (see fkey)
+A	modify select <t/s field op value>
+A	modify join <t1 t2 (type)> 
+
+B	support for pageable oo database classes (group)
+B	investigate define variables
+B	investigate def init/reset command
+	increase number of tables in view
+
+	build xml loader to load tables and relationships
+

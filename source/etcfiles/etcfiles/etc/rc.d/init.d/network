@@ -1,0 +1,76 @@
+#!/bin/sh
+# start stop network
+#
+
+activate()
+{
+# activate interface $1
+# ipaddress taken from hostname entry in /etc/hosts
+HOSTNAME=`cat /etc/hostname.$1 2> /dev/null`
+if [ -z $HOSTNAME ]
+then
+	HOSTNAME=NOHOSTNAME
+fi
+ROUTE=`cat /etc/route.$1 2> /dev/null`
+GATEWAY=`cat /etc/gateway.$1 2> /dev/null`
+NETMASK=`cat /etc/netmask.$1 2> /dev/null`
+if [ -z $NETMASK ] 
+then
+	NETMASK=255.255.255.0
+fi
+IPADDR=`/usr/bin/grep $HOSTNAME /etc/hosts | /usr/bin/awk '{ print $1 }'`
+if [ -z $IPADDR ]
+then
+	# start dhclient if no hostname entry
+	echo "Starting dhclient."
+    	/sbin/dhclient $1
+else
+	# fixed address if ip address found
+	echo "Starting interface $1."
+	/sbin/ifconfig $1 $IPADDR netmask $NETMASK up
+	if [ -n "$ROUTE" ]
+	then 
+		/sbin/route $ROUTE
+	fi
+	if [ -n "$GATEWAY" ]
+	then 
+		/sbin/route add default gw $GATEWAY 
+	fi
+fi
+}	
+
+
+deactivate()
+{
+# deactivate interface $1
+if /sbin/ifconfig | /usr/bin/grep $1 > /dev/null
+then
+	echo "Stoping interface $1."
+	/sbin/ifconfig $1 down
+fi
+}
+
+case "$1" in
+'start')
+	for IF in `ls /etc/hostname.* 2> /dev/null | sed 's/.*hostname\.//'`
+	do
+		activate $IF
+	done
+	# Attach the loopback device.
+	/sbin/ifconfig lo 127.0.0.1
+	/sbin/route add -net 127.0.0.0 netmask 255.0.0.0 lo
+	;;
+'stop')
+	for IF in `ls /etc/hostname.* 2> /dev/null | sed 's/.*hostname\.//'`
+	do
+	deactivate $IF
+	done
+	/usr/bin/pkill dhclient
+	/sbin/ifconfig lo down
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

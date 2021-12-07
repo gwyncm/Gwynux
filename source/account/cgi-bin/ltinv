@@ -1,0 +1,6 @@
+#! /bin/bash
+rm /home/nobody/ltinv.pre
+./acctcgi /home/nobody/ltinv.pre
+DATE=`awk -F: '{ print $5 }'  < /home/nobody/ltinv.pre` 
+awk -F: -f ltinv.awk < /home/nobody/ltinv.pre > /home/nobody/invoice/lt$DATE.html
+awk -F: -f ltinv.awk < /home/nobody/ltinv.pre

@@ -1,0 +1,9 @@
+#! /bin/bash
+if [ $# -lt 1 ]
+then
+	./unwind /home/nobody/transact.log |
+	awk -F: -f ledger.awk acct=1000 
+else
+	./unwind /home/nobody/transact.log |
+	awk -F: -f ledger.awk acct=$1 
+fi

@@ -1,0 +1,31 @@
+#! /bin/sh
+# Gwynux netcfg
+while true
+do
+/usr/bin/dialog --title "Gwynux Installation Tasks" \
+--backtitle "Gwynux Net Config" \
+--menu \
+"Select a network configureation option\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice." 21 65 12 \
+"Exit"		"Exit Netconfig (no changes)" \
+"Create"	"Create or modify an interface" \
+"Gateway"	"Set a gateway for an interface" \
+"Delete"	"Delete an existing interface" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+	case $choice in
+		[Ee]*)	clear; exit ;;
+		[Cc]*)	./setup.netif ;;
+		[Gg]*)	./setup.gateway ;;
+		[Dd]*)	./setup.netdel ;;
+		*)	echo Unrecognized Command
+	esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done

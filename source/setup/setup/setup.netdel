@@ -1,0 +1,14 @@
+#! /bin/sh
+#
+# Gwynux net interface delete
+#
+./setup.netlist
+clear
+for IFACE in `cat /tmp/netlist`
+do
+	HOSTNAME=`/bin/cat /etc/hostname.$IFACE` 
+	cp /etc/hosts /etc/hosts.back
+	sed /$HOSTNAME/d /etc/hosts.back > /etc/hosts
+	/bin/rm /etc/gateway.$IFACE 2> /dev/null	
+	/bin/rm /etc/hostname.$IFACE 2> /dev/null	
+done

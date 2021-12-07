@@ -1,0 +1,4 @@
+#!/bin/sh
+# reboot the system
+#
+/sbin/reboot

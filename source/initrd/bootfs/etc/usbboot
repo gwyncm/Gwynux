@@ -1,0 +1,30 @@
+#! /bin/ash
+# mount a loopfs for live
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PATH=$PATH:/rlive/bin:/rlive/usr/bin:/rlive/sbin:/rlive/usr/sbin
+export PATH
+#mount -t proc /proc	# busybox	
+cd /etc
+#ash installmod
+#rm /live 2> /dev/null
+#ln -s /loopfs /live
+#echo Waiting for usb initialization
+#sleep 4s
+#echo Continuing
+for DEV in /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1
+do
+	if mount $DEV /loopfs 
+	then
+		if mount /loopfs/gwynux.iso /cdrom
+		then 
+			if [ -x /sbin/init ]
+			then
+				exec /sbin/init
+			fi
+		fi
+	else
+		umount /loopfs 
+	fi
+done
+echo No image found
+exec ash 		# busybox

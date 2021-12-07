@@ -1,0 +1,84 @@
+1000  Bank General             ~DC10    
+1010  Cash on Hand             ~DC10    
+1020  Prepaid Federal Taxes    ~DC10    
+1030  Prepaid Provincial Taxes ~DC10    
+1040  Inventory                ~DC10    
+1050  Prepaid Expenses         ~DC10    
+1100  GST Paid                 ~DC11    
+1200  Accounts Receivable      ~DC12    
+1300  Notes Receivable         ~DC20    
+1500  Furniture & Fixtures     ~DC15    
+1510  Equipment                ~DC15    
+1520  Reference Library        ~DC15    
+1530  Vehicle(s)               ~DC15    
+1540  Computer Hardware        ~DC15    
+1550  Computer Software        ~DC15    
+1560  Chattels                 ~DC15    
+1600  Elig. Capital Property   ~DC16    
+1610  Organizational Expenses  ~DC16    
+2000  Accrued Expenses         ~DL20    
+2100  GST Collected            ~DL21    
+2200  PST Collected            ~DL22    
+2300  Accounts Payable         ~DL21    
+2400  Notes Payable            ~DL24    
+2410  Bank Loans               ~DL24    
+2420  Income Taxes Payable     ~DL24    
+2450  Salary Payable           ~DL24    
+3300  Retained Earnings        ~DC33    
+3400  Capital Stock            ~DC34    
+3600  Shareholders Advance     ~DC26    
+4000  Sales Services           ~DR40    
+4100  Sales Products           ~DR41    
+4200  Commissions              ~DR40    
+4300  Partnership Alloc T1013  ~DR40    
+4400  Dividends                ~DR40    
+4500  Other Income             ~DR40    
+5000  Opening Inventory        ~DE5     
+5100  Purchases for Resale     ~DE5     
+5110  Packaging Materials      ~DE5     
+5200  Closing Inventory        ~DE5     
+6000  Professional Services    ~DE60    
+6010  Secretarial Services     ~DE60    
+6030  Commissions              ~DE60    
+6050  Sub-Contracted Services  ~DE60    
+6100  Rent                     ~DE61    
+6105  Mortgage Interest        ~DE61    
+6110  Condominium Fees         ~DE61    
+6115  Property Taxes           ~DE61    
+6120  Insurance                ~DE61    
+6125  Utilities                ~DE61    
+6130  Repairs & Maintenance    ~DE61    
+6150  Other Building Expenses  ~DE61    
+6195  Personal Use             ~DE61    
+6200  Business Taxes & Permits ~DE62    
+6205  Telecommunications       ~DE62    
+6210  Postage, Courier & Frght ~DE62    
+6215  Materials & Supplies     ~DE62    
+6220  Equipment Rent & Repair  ~DE62    
+6225  Liab or Bus Insurance    ~DE62    
+6230  Printing & Copying       ~DE62    
+6235  Ref Books & Magazines    ~DE62    
+6240  Stationery & Cards       ~DE62    
+6250  Other Office Expenses    ~DE62    
+6300  Loan Interest            ~DE63    
+6305  Bank Charges             ~DE63    
+6310  Accounting & Legal Fees  ~DE63    
+6315  Association Dues         ~DE63    
+6320  Business Promotion       ~DE63    
+6325  Travel                   ~DE63    
+6330  Conferences & Seminars   ~DE63    
+6335  Advertising              ~DE63    
+6340  Small Tools              ~DE63    
+6350  Bad Debts                ~DE63    
+6360  Miscellaneous            ~DE61    
+6400  Garaging & Parking       ~DE64    
+6405  Leasing                  ~DE64    
+6410  Gasoline                 ~DE64    
+6415  Insurance                ~DE64    
+6420  Plates & Permits         ~DE64    
+6425  Repairs & Maintenance    ~DE64    
+6430  Financing Charges        ~DE64    
+6435  Washing & Waxing         ~DE64    
+6450  Other Vehicle Expenses   ~DE64    
+6495  Personal Use             ~DE64    
+6900  Depreciation             ~DE69    

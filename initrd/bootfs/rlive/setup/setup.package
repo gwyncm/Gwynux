@@ -1,0 +1,105 @@
+#! /bin/sh
+#
+# Gwynux package installation script
+#
+while true
+do
+/usr/bin/dialog --title "Gwynux Package Installation" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Select the location of the packages to install.\n\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice.\n\n" 20 65 5 \
+"Exit"    "Exit package setup" \
+"Umount"  "Unmount /cdrom" \
+"Mount"   "Mount a device on /cdrom for installation" \
+"Select"  "Select a directory for installation" \
+"Install" "Install packages from the selected directory" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+	0)
+        case $choice in
+#
+# Exit
+#
+	[Ee]*) clear; exit ;;	
+#
+# Unmount cdrom
+#
+	[Uu]*) clear; umount /cdrom ;;	
+#
+# Install from local directory
+#
+      	[Ss]*)	
+	/usr/bin/dialog --title "Directory Selection" \
+	--backtitle "Gwynux Installation" \
+	--inputbox \
+	"Enter the path to the install directory:\n" 10 65 \
+	2> /tmp/inputbox.tmp.$$
+	retval=$?
+	DIR=`cat /tmp/inputbox.tmp.$$`
+	rm -f /tmp/inputbox.tmp.$$
+	case $retval in
+  		1) clear ;;
+  	  	255) clear ;;
+		0)
+		rm /gwynux
+		ln -sf $DIR /gwynux ;;
+	esac;;
+#
+# Mount package device
+#
+	[Mm]*) 
+	fdisk -l | grep '^/dev' > /tmp/list.tmp.$$
+	/usr/bin/dialog --title "Device Selection" \
+	--backtitle "Gwynux Installation" \
+	--inputbox \
+	"Enter the device name for package installation eg: /dev/hda1\n\n\
+	`cat < /tmp/list.tmp.$$`" 16 65 \
+	2> /tmp/inputbox.tmp.$$
+	retval=$?
+	DEV=`cat /tmp/inputbox.tmp.$$`
+	rm -f /tmp/inputbox.tmp.$$
+	rm -f /tmp/list.tmp.$$
+	case $retval in
+  		1) clear ;;
+  	  	255) clear ;;
+		0)
+		clear
+		if [ "X$DEV" != X ]
+		then
+			mount $DEV /cdrom 
+		fi 
+		echo Press return to continue
+		read rest ;;
+	esac;;
+#
+# Install packages
+#
+	[Ii]*)
+	> /tmp/pkglist 		# empty/create package list
+	./setup.pkglist
+	clear
+	for pkg in `cat /tmp/pkglist`
+	do
+		echo installing $pkg
+		if [ -d /gwynux/$pkg ]
+		then
+			( cd /gwynux/$pkg ; pkgadd *.tgz )
+		else
+			( cd /gwynux ; pkgadd $pkg )
+		fi
+	done
+	echo Press return to continue
+	read rest ;;
+#
+# End of actions
+#
+    	esac ;;
+	1) clear; exit ;;	# cancel pressed
+	255) clear; exit ;;   	# ESC pressed
+esac
+done

@@ -1,0 +1,94 @@
+Syntax mapping for st<->pc 
+
+Note the inability of c++ language 
+to effectivly manipulate objects.  
+adjustments have been made. 
+
+>>>> currently implemented
+
+>>>> create class and declare constructor (pc):
+
+class <classname> : <parent>
+	{
+public:
+	<classname>(void);
+	};
+
+>>>> create class and declare constructor (st):
+
+<classname> <- class new.
+phonetab setParent: '<parent>'.
+phonetab addMethod: '<classname>'.
+
+>>>> define constructor (pc)
+
+<classname>::<classname>(void)
+{
+<metname>(<parm>);
+}
+
+>>>> define constructor (st)
+
+<classname> setMethod: <metname> as:
+[
+self <metname>: <parm>.
+]
+
+>>>> define method (pc)
+
+<classname>::<metname>(void)
+{
+<object>.<method>();
+}
+
+>>>> define method (st)
+
+<classname> setMethod: <metname> as:
+[
+<object> <method>: <parm>.
+]
+
+>>>> define object (pc)
+
+<classname>  	<objname>;
+
+>>>> define object(st)
+
+<objname> <- <classname> new.
+
+>>>> proposed extensions
+
+>>>> construct if (st)
+
+(<condition>) ifTrue:  [ <block> ]
+(<condition>) ifFalse: [ <block> ]
+
+>>>> construct if (pc)
+
+if (<condition>) { <block> }
+if (<condition>) <statement>;
+
+>>>> construct while (st)
+
+(<condition>) whileTrue:   [ <block> ]
+(<condition>) whileFalse:  [ <block> ]
+
+>>>> construct while (pc)
+
+while (<condition>) { <block> }
+while (<condition>) <statement>;
+
+>>>> construct for (st)
+
+<value> timesRepeat: [ <block> <statement2> ]
+
+<statement1>.
+(<condition>) whileTrue: [ <block> <statement2> ]
+
+>>>> construct for (pc)
+
+for (<statement1>; <condition>; <statement2>;) { <block> }
+for (<statement1>; <condition>; <statement2>;)  <statement>; 
+
+
+

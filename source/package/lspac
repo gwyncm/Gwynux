@@ -1,0 +1,11 @@
+#! /bin/bash
+# List packages 
+FROM=$1
+find $FROM -name '*.bin.tgz' | sort | 
+	sed 's/.bin.tgz//' | 
+	awk -F/ ' { print $2 , $3 }' |
+	while read DIR PKG
+	do
+	VER=`echo $PKG | sed 's/$DIR//'`
+echo $DIR '|' BASIC '|' $VER '|' `cat $FROM/$DIR/$DIR.url` '|' `cat $FROM/$DIR/$DIR.dsc` 
+	done | awk -F'|' -f ./htpac.awk 

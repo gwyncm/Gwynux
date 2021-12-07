@@ -1,0 +1,5 @@
+#! /bin/bash
+echo Content-type: text/html
+echo
+( cd /home/nobody; ls -l ) | 
+grep  'transact' | grep -v '\.bak' | grep -v '\.new' | awk -f select.awk 

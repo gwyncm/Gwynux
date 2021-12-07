@@ -1,0 +1,23 @@
+9f
+splash.lss
+
+Welcome to Gwynux version 10A 
+
+At the boot prompt, you may enter any of the following:
+
+You may boot start init with: start (this is the default)
+
+You may boot to the shell with: shell 
+
+You may boot to the shell with huge kernel: huge
+
+You may boot to the setup with: setup 
+
+You may boot from a hard disk with: bzImage root=/dev/xxxx
+
+You may boot with parameters with: bzImage (parameters here)
+
+This message will self distruct in 20 seconds.
+
+Good Luck!
+

@@ -1,0 +1,33 @@
+#! /bin/sh
+# make a gwynux package 
+tar zxf $1
+DIR=`echo $1 | sed 's/.tar.gz//'`
+echo dir is $DIR
+cd $DIR
+if ./configure
+then
+	echo configure ok?
+	read
+	if	make
+	then
+		echo make ok?
+		read
+		if mkinstall
+		then
+			echo mkinstall ok?
+			read
+			vi install.files
+		else
+			exit
+		fi
+	else
+		exit
+	fi
+else
+	exit
+fi
+cd ..
+mktgz $DIR
+echo mktgz ok?
+read
+rm -r $DIR

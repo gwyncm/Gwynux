@@ -1,0 +1,49 @@
+#!/bin/sh
+config() {
+  NEW="$1"
+  OLD="$(dirname $NEW)/$(basename $NEW .new)"
+  # If there's no config file by that name, mv it over:
+  if [ ! -r $OLD ]; then
+    mv $NEW $OLD
+  elif [ "$(cat $OLD | md5sum)" = "$(cat $NEW | md5sum)" ]; then # toss the redundant copy
+    rm $NEW
+  fi
+  # Otherwise, we leave the .new copy for the admin to consider...
+}
+
+# Keep same perms on rc.udev.new:
+if [ -e etc/rc.d/rc.udev ]; then
+  cp -a etc/rc.d/rc.udev etc/rc.d/rc.udev.new.incoming
+  cat etc/rc.d/rc.udev.new > etc/rc.d/rc.udev.new.incoming
+  mv etc/rc.d/rc.udev.new.incoming etc/rc.d/rc.udev.new
+fi
+
+config etc/rc.d/rc.udev.new
+config etc/modprobe.d/blacklist.new
+config etc/modprobe.d/isapnp.new
+config etc/modprobe.d/psmouse.new
+config etc/modprobe.d/usb-controller.new
+( cd usr/lib ; rm -rf libudev.so )
+( cd usr/lib ; ln -sf ../..//lib/libudev.so.0.0.6 libudev.so )
+( cd usr/lib ; rm -rf libvolume_id.so )
+( cd usr/lib ; ln -sf ../..//lib/libvolume_id.so.1.0.6 libvolume_id.so )
+( cd sbin ; rm -rf scsi_id )
+( cd sbin ; ln -sf ../lib/udev/scsi_id scsi_id )
+( cd sbin ; rm -rf vol_id )
+( cd sbin ; ln -sf ../lib/udev/vol_id vol_id )
+( cd lib/udev/devices ; rm -rf fd )
+( cd lib/udev/devices ; ln -sf /proc/self/fd fd )
+( cd lib/udev/devices ; rm -rf stderr )
+( cd lib/udev/devices ; ln -sf /proc/self/fd/2 stderr )
+( cd lib/udev/devices ; rm -rf core )
+( cd lib/udev/devices ; ln -sf /proc/kcore core )
+( cd lib/udev/devices ; rm -rf stdout )
+( cd lib/udev/devices ; ln -sf /proc/self/fd/1 stdout )
+( cd lib/udev/devices ; rm -rf stdin )
+( cd lib/udev/devices ; ln -sf /proc/self/fd/0 stdin )
+( cd lib/udev/devices ; rm -rf X0R )
+( cd lib/udev/devices ; ln -sf null X0R )
+( cd lib ; rm -rf libudev.so.0 )
+( cd lib ; ln -sf libudev.so.0.0.6 libudev.so.0 )
+( cd lib ; rm -rf libvolume_id.so.1 )
+( cd lib ; ln -sf libvolume_id.so.1.0.6 libvolume_id.so.1 )

@@ -1,0 +1,8 @@
+#! /bin/bash
+if [ $# -lt 1 ]
+then
+	awk -F: -f journal.awk /home/nobody/transact.log  
+else
+	grep -i "$1" /home/nobody/transact.log | 
+	awk -F: -f journal.awk 
+fi

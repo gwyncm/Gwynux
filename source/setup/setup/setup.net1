@@ -1,0 +1,8 @@
+#!/bin/sh
+/usr/bin/dialog --title "Gwynux Net Interface Selection " \
+--backtitle "Gwynux Installation" \
+--checklist \
+"Select required interface from the following list.\n\
+You can use the UP/DOWN arrow keys to scroll the list\n\
+Press SPACE to toggle a package on/off. \n\n\
+Please choose your interface" 20 61 9 \

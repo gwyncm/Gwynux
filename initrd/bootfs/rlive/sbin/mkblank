@@ -1,0 +1,2 @@
+# cdrecord blank rewritable cd
+cdrecord -v -eject -pad speed=8 dev=0,0,0 -blank=all

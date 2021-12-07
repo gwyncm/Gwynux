@@ -1,0 +1,16 @@
+#! /bin/sh
+# system switch to directory on mnt2
+#
+if [ X$1 = X ]
+then 
+	echo "usage: $0  /dev/<target>"
+	exit
+fi
+/bin/mount $1 /mnt2
+if [ -s /mnt2/gwynux ]
+then
+	rm /var
+	ln -sfn /mnt2/gwynux/var /var
+	/etc/rc.d/init.d/syslog stop
+	/etc/rc.d/init.d/syslog start
+fi

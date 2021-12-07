@@ -1,0 +1,3 @@
+#! /usr/bin/ksh
+# make required directories
+mkdir -p var/state/dhcp

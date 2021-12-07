@@ -1,0 +1,1 @@
+../systools/sbin/mkinitrd.sh

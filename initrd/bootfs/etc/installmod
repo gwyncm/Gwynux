@@ -1,0 +1,25 @@
+#insmod modules/fat.ko
+#insmod modules/vfat.ko
+#insmod modules/isofs.ko
+#insmod modules/jbd.ko
+#insmod modules/mbcache.ko
+#insmod modules/ext2.ko
+#insmod modules/ext3.ko
+#insmod modules/sg.ko
+#insmod modules/uhci-hcd.ko
+#insmod modules/usb-storage.ko
+#insmod modules/nls_cp437.ko
+#insmod modules/nls_iso8859-1.ko
+#
+modprobe fat
+modprobe vfat
+modprobe isofs
+modprobe jbd
+modprobe mbcache
+modprobe ext2
+modprobe ext3
+modprobe sg
+modprobe uhci-hcd
+modprobe usb-storage
+modprobe nls_cp437
+modprobe nls_iso8859-1

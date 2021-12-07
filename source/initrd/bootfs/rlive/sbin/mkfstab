@@ -1,0 +1,7 @@
+#! /bin/sh
+# create fstab entires for install device
+CDROM=`cat /proc/mounts | grep cdrom | awk '{print $1}'`
+echo $1 / auto defaults 1 1
+echo $CDROM /cdrom iso9660 ro,user,noauto,unhide 1 1
+echo none /dev/pts devpts mode=0620 0 0
+echo none /proc proc defaults 0 0

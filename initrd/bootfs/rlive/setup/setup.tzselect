@@ -1,0 +1,7 @@
+#! /bin/sh
+. tzselect	# source it 
+sed '/TZ=/d' /etc/profile > /etc/profile.new
+mv /etc/profile /etc/profile.old
+mv /etc/profile.new /etc/profile
+echo export TZ=\'$TZ\' >> /etc/profile
+echo Your /etc/profile has been updated

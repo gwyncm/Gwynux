@@ -1,0 +1,43 @@
+#! /bin/sh
+#
+# Gwynux basic installation script
+#
+# Device selection
+#
+fdisk -l | grep '^/dev.*Linux' > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Device Selection" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter the device name for basic installation eg: /dev/hda1 \n\
+If there are no devices listed you will need to run fdisk  \n\
+Just hit cancel here and run fdisk from the main menu. \n
+`cat < /tmp/list.tmp.$$` " 20 65 \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+DEV=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+clear
+if [ X$DEV == X ]
+then
+	exit
+fi
+#
+# call bxinstall
+#
+/sbin/bxinstall $DEV 
+echo Press return to continue
+read rest
+#
+# Reboot message
+#
+/usr/bin/dialog --title "System Reboot" \
+--backtitle "Gwynux Installation" \
+--msgbox \
+"Reboot the system now to start up your installed Gwynux.\n\
+If you have not installed a boot loader, \n\
+use the boot loader on the install disk\n" 8 65

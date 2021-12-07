@@ -1,0 +1,4 @@
+#!/bin/sh
+# halt the system
+#
+/sbin/poweroff

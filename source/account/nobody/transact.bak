@@ -1,0 +1,179 @@
+1:I:050201:Beginning Balance:1000:18252.49:0:0:3300
+2:I:050201:Beginning Balance:1200:9716.80:0:0:3300
+3:E:050201:Beginning Balance:2000:0:0:0:3300
+4:E:050201:Beginning Balance:2300:2854.28:0:0:3300
+5:E:060212:Bell Mobility:2000 Accrued Expenses:37.10:2.28::6205 Telecommunications
+6:E:060216:Bell:2000 Accrued Expenses:101.18:6.17::6205 Telecommunications
+7:E:060210:Fuel:2000 Accrued Expenses:236.67:0:0:6410 Gasoline
+8:E:060203:G. Morrison:2000 Accrued Expenses:160.00:0:0:6325 Travel
+9:E:060213:Domainsatcost:2000 Accrued Expenses:28.83:1.89:0:6250 Other Office Expenses
+10:E:060210:G. Morrison:2000 Accrued Expenses:160.00:0:0:6325 Travel
+11:E:060207:Aviva:1000 Bank General:348.49::0:6120 Insurance
+12:I:060215:LTI 336:1000 Bank General:4858.40:308:0:4000 Sales Services
+13:E:060215:M Morrison:1000 Bank General:1600:0:0:2300 Accounts Payable 
+14:I:060221:Telke Ltd:1000 Bank General:642:42:0:4000 Sales Services
+15:E:060221:IGS:1000 Bank General:37.4::0:6205 Telecommunications
+16:E:060221:PST Return:1000 Bank General:67.41:0:0:2300 Accounts Payable 
+17:E:060221:M Morrison:1000 Bank General:1135.85:0:0:2300 Accounts Payable 
+18:E:060222:IGS:1000 Bank General:149.59::0:6205 Telecommunications
+19:E:060223:GST Return:1000 Bank General:51.02:0:0:2300 Accounts Payable 
+20:E:060309:C.I.B.C.:2000 Accrued Expenses:0.40:0:0:6305 Bank Charges
+21:E:060312:Bell Mobility:2000 Accrued Expenses:28.75:1.75:0:6205 Telecommunications
+22:E:060316:Bell:2000 Accrued Expenses:214.93:13.36:0:6205 Telecommunications
+23:E:060329:Bells Corners Postal Station:2000 Accrued Expenses:5.46:0.36:0:6210 Postage, Courier & Frght
+24:E:060317:G. Morrison:2000 Accrued Expenses:176.00:0:00:6325 Travel
+25:E:060312:G. Morrison:2000 Accrued Expenses:595.00:0:0:6325 Travel
+26:I:060306:LTI 435 :1000 Bank General:4858.40:308:0:4000 Sales Services
+27:E:060307:Aviva:1000 Bank General:348.48::0:6120 Insurance
+28:I:060316:LTI :1000 Bank General:4858.40:0:0:1200 Accounts Receivable
+29:I:060327:LTI:1000 Bank General:4858.40:0:0:1200 Accounts Receivable
+30:E:060316:M Morrison (rent):1000 Bank General:1500:0:0:6100 Rent
+31:E:060321:IGS:1000 Bank General:37.40::0:6205 Telecommunications
+32:I:060329:Tilke:1000 Bank General:3210::0:4000 Sales Services
+33:E:060412:Bell Mobility:2000 Accrued Expenses:29.09:1.77:0:6205 Telecommunications
+34:E:060416:Bell:2000 Accrued Expenses:130.08:7.93:0:6205 Telecommunications
+35:E:060420:Staples:2000 Accrued Expenses:6.86:0.42:0:6250 Other Office Expenses
+36:E:060225:Rogers:2000 Accrued Expenses:40.06:2.44:0:6205 Telecommunications
+37:E:060325:Rogers:2000 Accrued Expenses:39.54:2.41:0:6205 Telecommunications
+38:E:060425:Rogers:2000 Accrued Expenses:39.79:2.42:0:6205 Telecommunications
+39:I:060531:Telke Ltd.:1000 Bank General:1926:120:0:4000 Sales Services
+40:I:060311:LTI 428/382:1000 Bank General:5611.90:318.50:0:4000 Sales Services
+41:E:060421:IGS:1000 Bank General:37.40::0:6205 Telecommunications
+42:I:060531:GST Return:2100 GST Collected:103.48:0:0:1100 GST Paid
+43:E:060531:GST Return:1000 Bank General:1203.02:0:0:2100 GST Collected
+44:E:060519:IGS:1000 Bank General:37.40::0:6205 Telecommunications
+45:E:060516:M Morrison:1000 Bank General:2200:0:0:2000 Accrued Expenses
+46:E:060501:Future Shop:2000 Accrued Expenses:22.96:1.40:0:6250 Other Office Expenses
+47:E:060525:Rogers:2000 Accrued Expenses:38.76::0:6205 Telecommunications
+48:E:060512:Bell Mobility:2000 Accrued Expenses:28.75:1.75:0:6205 Telecommunications
+49:E:060516:Bell:2000 Accrued Expenses:133.53:8.14:0:6205 Telecommunications
+50:E:060524:Domainsatcost:2000 Accrued Expenses:14.43:0:0:6205 Telecommunications
+51:E:060502:G. Morrison:2000 Accrued Expenses:160.00:0:0:6325 Travel
+52:E:060502:G. Morrison:2000 Accrued Expenses:80.00:0:0:6325 Travel
+53:E:060601:Canada Post:2000 Accrued Expenses:3.03.:0.20:0:6210 Postage, Courier & Frght
+54:I:060606:Telke:1000 Bank General:1284:84:0:4000 Sales Services
+55:E:060606:Rent:1000 Bank General:1500:0:0:6100 Rent
+56:E:060612:Bell Mobility:2000 Accrued Expenses:28.75:1.75:0:6205 Telecommunications
+57:I:060619:LTI 396/227d:1000 Bank General:8679.82:539:0:4000 Sales Services
+58:E:060616:Bell:2000 Accrued Expenses:131.57:8.02:0:6205 Telecommunications
+59:E:060620:IGS:1000 Bank General:37.40::0:6205 Telecommunications
+60:I:060629:LTI 144ITE:1000 Bank General:235.70:10.5:0:4000 Sales Services
+61:E:060604:G. Morrison:2000 Accrued Expenses:582.00:0:0:6325 Travel
+62:E:060609:G. Morrison:2000 Accrued Expenses:192.50:0:0:6325 Travel
+63:E:060615:G. Morrison:2000 Accrued Expenses:665.85:0:0:6325 Travel
+64:I:060718:Telke Ltd:1000 Bank General:1926:126:0:4000 Sales Services
+65:E:060718:G. Morrison:1000 Bank General:5000:0:0:6050 Sub-Contracted Services
+66:E:060718:M Morrison:1000 Bank General:1000:0:0:2000 Accrued Expenses
+67:E:060720:IGS:1000 Bank General:37.05::0:6205 Telecommunications::
+68:I:060727:LTI 143ite/227d/143:1000 Bank General:9827.85:549.50:0:4000 Sales Services:
+69:I:060727:Telke Ltd:1000 Bank General:2568:168:0:4000 Sales Services:
+70:E:060706:BML Communications:2000 Accrued Expenses:266.76:14.04:0:6250 Other Office Expenses::
+71:E:060704:Future Shop:2000 Accrued Expenses:59.26:3.12:0:6250 Other Office Expenses::
+72:E:060707:Rogers:2000 Accrued Expenses:68.39:3.60:0:6205 Telecommunications::
+73:E:060708:Zellers:2000 Accrued Expenses:9.06:0.48:0:6250 Other Office Expenses::
+74:E:060712:Bell Mobility:2000 Accrued Expenses:28.50:1.50:0:6205 Telecommunications::
+75:E:060726:Telephone Booth:2000 Accrued Expenses:28.49:1.50:0:6250 Other Office Expenses::
+76:E:060727:Bells Corners Postal Outlet:2000 Accrued Expenses:0.54:0.03:0:6210 Postage, Courier & Frght::
+77:E:060716:Bell Mobility:2000 Accrued Expenses:130.89:6.90:0:6205 Telecommunications::
+78:E:060713:Algonquin College:2000 Accrued Expenses:2637.96:138.84:0:1540 Computer Hardware::
+79:E:060706:The Sony Store:2000 Accrued Expenses:1265.38::0:1510 Equipment::
+80:E:060728:Future Shop:2000 Accrued Expenses:116.99::0:6250 Other Office Expenses::
+81:E:060625:Rogers:2000 Accrued Expenses:41.09:2.50:0:6205 Telecommunications::
+82:E:060725:Rogers:2000 Accrued Expenses:238.88:12.57:0:6205 Telecommunications::
+83:E:060817:Anne G:1000 Bank General:500:0:0:1510 Equipment:
+84:I:060901:Anne G:1000 Bank General:2750:0:0:1510 Equipment::
+85:E:060817:M Morrison:1000 Bank General:5000:0:0:2000 Accrued Expenses::
+86:E:060821:IGS:1000 Bank General:37.05::0:6205 Telecommunications::
+87:E:060830:G. Morrison:1000 Bank General:10000:0:0:6050 Sub-Contracted Services::
+88:I:060830:GST Return:2100 GST Collected:287.10:0:0:1100 GST Paid:
+89:E:060830:GST Return:1000 Bank General:1101.60:0:0:2100 GST Collected::
+90:E:060803:Staples:2000 Accrued Expenses:19.97::0:6250 Other Office Expenses::
+91:E:060803:Future Shop:2000 Accrued Expenses:46.16:2.43:0:6250 Other Office Expenses::
+92:E:060805:Staples:2000 Accrued Expenses:11.35:0.60:0:6250 Other Office Expenses::
+93:E:060812:Bell Mobility:2000 Accrued Expenses:28.50:1.50:0:6205 Telecommunications::
+94:E:060816:Bell Mobility:2000 Accrued Expenses:225.08:7.28:0:6205 Telecommunications::
+95:E:060815:PC Cyber:2000 Accrued Expenses:100.70:5.70:0:5100 Purchases for Resale::
+96:E:060817:Bell Corners Postal Station:2000 Accrued Expenses:1.65:0.09:0:6210 Postage, Courier & Frght::
+97:E:060823:PC Cyber:2000 Accrued Expenses:148.40:8.40:0:5100 Purchases for Resale::
+98:E:060824:Bells Corners Postal Outlet:2000 Accrued Expenses:4.32:0.24:0:6210 Postage, Courier & Frght::
+99:E:060824:B ells Corners Postal Outlet:2000 Accrued Expenses:8.84:0.50:0:6210 Postage, Courier & Frght::
+100:E:060821:Apple Computer:2000 Accrued Expenses:1274.52:67.08:0:1540 Computer Hardware::
+101:I:060831:Telke:1000 Bank General:636:36:0:4000 Sales Services:
+102:E:060914:M Morrison:1000 Bank General:2000:0:0:2000 Accrued Expenses::
+103:E:060920:IGS:1000 Bank General:37.05::0:6205 Telecommunications::
+104:E:060825:Rogers:2000 Accrued Expenses:38.58::0:6205 Telecommunications::
+104:E:060925:Rogers:2000 Accrued Expenses:38.68::0:6205 Telecommunications::
+104:E:061025:Rogers:2000 Accrued Expenses:38.42::0:6205 Telecommunications::
+107:E:060902:Future Shop:2000 Accrued Expenses:71.96:0:0:6250 Other Office Expenses::
+108:E:060903:The Sony Store :2000 Accrued Expenses:56.99:3.00:0:6250 Other Office Expenses::
+109:E:060912:The Home Depot:2000 Accrued Expenses:113.95:6.00:0:6250 Other Office Expenses::
+110:E:060916:Bell:2000 Accrued Expenses:68.68:8.20:0:6205 Telecommunications::
+111:E:060912:Bell Mobility:2000 Accrued Expenses:28.50:1.50:0:6205 Telecommunications::
+112:E:060901:Apple Computer:2000 Accrued Expenses:80.94:4.26:0:1540 Computer Hardware::
+113:E:060909:Future Shop:2000 Accrued Expenses:49.99:3.00:0:6250 Other Office Expenses::
+114:E:060908:LI 143 Ottawa:2000 Accrued Expenses:194.75:0:0:6325 Travel::
+115:E:060929:LTI 144 Ott:2000 Accrued Expenses:160:0:0:6325 Travel::
+116:E:061016:Bell Corners Postal Station:2000 Accrued Expenses:155.37:8.19:0:6205 Telecommunications::
+117:E:061017:Active Tech Electronics Inc.:2000 Accrued Expenses:9.08:0.48:0:6250 Other Office Expenses::
+118:E:061012:Bell Mobility:2000 Accrued Expenses:28.50:1.50:0:6205 Telecommunications::
+119:E:061027:Lti 428 Ott:2000 Accrued Expenses:152.00:0:0:6325 Travel::
+120:I:060831:Telke:1000 Bank General:1908::0:4000 Sales Services:
+121:E:061020:M Morrison:1000 Bank General:1800.06:0:0:2000 Accrued Expenses::
+122:I:061026:LTI 143 Ott:1000 Bank General:4844.75::0:4000 Sales Services:
+123:E:061031:Anne G :1000 Bank General:450:0:0:1510 Equipment::
+124:I:061127:GST Return:2100 GST Collected:141.82:0:0:1100 GST Paid:
+125:E:060830:GST Return:1000 Bank General:336.41:0:0:2100 GST Collected::
+126:I:061115:LTI 144 Ott:1000 Bank General:4812.80:264:0:4000 Sales Services:
+127:I:061115:Telke:1000 Bank General:1272.00:72:0:4000 Sales Services:
+128:E:061014:Active :2000 Accrued Expenses:2.27:0.12:0:6250 Other Office Expenses::
+129:E:061020:Radioworld Inc.:2000 Accrued Expenses:1800.06:94.74:0:1510 Equipment::
+130:E:061102:Bytown Marine:2000 Accrued Expenses:57.00:3.00:0:6250 Other Office Expenses::
+131:E:061102:Bytown Marine:2000 Accrued Expenses:102.60:5.40:0:6250 Other Office Expenses::
+132:E:061103:Bytown Marine:2000 Accrued Expenses:114.00:6.00:0:6250 Other Office Expenses::
+133:E:061104:Active:2000 Accrued Expenses:3.75:0.20:0:6250 Other Office Expenses::
+134:E:061106:Apple Store:2000 Accrued Expenses:67.21:3.54:0:6250 Other Office Expenses::
+135:E:061107:Apple Store:2000 Accrued Expenses:56.95:3.00:0:6250 Other Office Expenses::
+136:E:061108:Apple Computer:2000 Accrued Expenses:68.35:3.60:0:6250 Other Office Expenses::
+137:E:061108:Worlds Biggest Bookstore:2000 Accrued Expenses:7.41:0.39:0:6235 Ref Books & Magazines::
+138:E:061108:Rogers:2000 Accrued Expenses:38.42:2.02:0:6205 Telecommunications::
+139:E:061112:Bell Mobility:2000 Accrued Expenses:39.33:2.07:0:6205 Telecommunications::
+140:E:061116:Bell:2000 Accrued Expenses:119.46:6.29:0:6205 Telecommunications::
+141:E:061109:G. Morrison:2000 Accrued Expenses:677.10:0:0:6325 Travel::
+142:I:061228:LTI 227D Tor:1000 Bank General:4166.20:198:0:4000 Sales Services:
+143:E:061222:IGS:1000 Bank General:74.10::0:6205 Telecommunications::
+144:E:061211:G Morrison:1000 Bank General:5000:0:0:6050 Sub-Contracted Services::
+145:I:061206:LTI 428 Ott:1000 Bank General:4804.80:264:0:4000 Sales Services:
+146:E:061209:Rogers:2000 Accrued Expenses:4.22:2.02:0:6205 Telecommunications::
+147:E:061207:The Sony Store :2000 Accrued Expenses:56.99:3.00:0:6250 Other Office Expenses::
+148:E:061207:The Sony Store:2000 Accrued Expenses:1822.85:95.94:0:6250 Other Office Expenses::
+149:E:061219:Future Shop:2000 Accrued Expenses:199.46:10.50:0:6250 Other Office Expenses::
+150:E:061212:Bell Mobility:2000 Accrued Expenses:35.07:1.86:0:6205 Telecommunications::
+151:E:061216:Bell:2000 Accrued Expenses:130.89:6.90:0:6205 Telecommunications::
+152:E:061221:PC Cyber:2000 Accrued Expenses:97.52:5.52:0:5100 Purchases for Resale::
+153:E:061205:Steves Music:2000 Accrued Expenses:427.50:22.50:0:1510 Equipment::
+154:E:061227:Steves Music:2000 Accrued Expenses:1936.86:101.94:0:1510 Equipment::
+155:E:061229:Steves Music:2000 Accrued Expenses:49.01:2.58:0:1510 Equipment::
+156:E:070501:Canada Post:2000 Accrued Expenses:15.66:0.89:0:6210 Postage, Courier & Frght::
+157:E:061217:NCF Offie:2000 Accrued Expenses:35.99:0:0:6205 Telecommunications::
+158:E:061225:Rogers:2000 Accrued Expenses:158.87:8.15:0:6205 Telecommunications::
+159:E:070102:PC Cyber:2000 Accrued Expenses:182.32:10.32:0:5100 Purchases for Resale::
+160:E:070104:Steves Music:2000 Accrued Expenses:575.70:30.30:0:1510 Equipment::
+161:E:070501:Costco:2000 Accrued Expenses:53.00:0:0:6315 Association Dues::
+162:E:070106:Steves Music:2000 Accrued Expenses:1252.86:65.94:0:1510 Equipment::
+163:E:070102:M Morrison:1000 Bank General:8000:0:0:2000 Accrued Expenses::
+163:E:070112:Bell Mobility:2000 Accrued Expenses:31.68:1.71:0:6205 Telecommunications::
+164:E:071601:Bell:2000 Accrued Expenses:18.00:0.96:0:6205 Telecommunications::
+165:E:070105:CIBC:1000 Bank General:58.30::0:6305 Bank Charges::
+166:E:070116:NCF Office:2000 Accrued Expenses:35.99:0:0:6205 Telecommunications::
+167:E:070124:G. Morrison:1000 Bank General:7500:0:0:6325 Travel::
+169:E:070123:Domainsatcost:2000 Accrued Expenses:14.29:0:0:6205 Telecommunications::
+169:I:070120:GA Morrison:2000 Accrued Expenses:513:27:36:4100 Sales Products:
+171:E:070125:Rogers:2000 Accrued Expenses:103.18:5.44:0:6205 Telecommunications::
+172:E:070130:Steves Music:2000 Accrued Expenses:96.84:10.20:0:1510 Equipment::
+173:E:070131:PC Cyber:2000 Accrued Expenses:130.38:7.38:0:5100 Purchases for Resale::
+174:E:070101:Bias Inc:2000 Accrued Expenses:141.03:0:0:6250 Other Office Expenses::
+174:E:070121:Canadian Tire:2000 Accrued Expenses:53.46:3.50:0:6250 Other Office Expenses::
+176:E:061002:Canada Post:2000 Accrued Expenses:1.65:0.09:0:6210 Postage, Courier & Frght::
+177:E:061230:Rent:2000 Accrued Expenses:2000:0:0:6100 Rent::
+178:E:061230:G. Morrison:2000 Accrued Expenses:8000:0:0:6050 Sub-Contracted Services::
+120:I:060831:Telke:1000 Bank General:1908:108:0:4000 Sales Services:

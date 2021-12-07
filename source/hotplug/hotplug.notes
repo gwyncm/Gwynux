@@ -1,0 +1,6 @@
+Modified /etc/hotplud/pct.rc to add local/sbin path
+Moved hotplug to rc.d/init.d
+Patched pciutils for pcimodules
+added more paths for pcimodules
+set pciutils and usbutils for /usr
+disable radeonfb 

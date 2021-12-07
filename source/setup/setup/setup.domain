@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# Domain setup
+#
+DOMAIN=`/usr/bin/grep domain /etc/resolv.conf | \
+awk ' { print $2 } ' 2> /dev/null`
+echo $DOMAIN > /tmp/list.tmp.$$
+/usr/bin/dialog --title "Domainname Setup" \
+--backtitle "Gwynux Installation" \
+--inputbox \
+"Enter your network domainname " 8 65 \
+"`cat < /tmp/list.tmp.$$`" \
+2> /tmp/inputbox.tmp.$$
+retval=$?
+DOMAIN=`cat /tmp/inputbox.tmp.$$`
+rm -f /tmp/inputbox.tmp.$$
+rm -f /tmp/list.tmp.$$
+case $retval in
+  1) clear; exit ;;
+  255) clear; exit ;;
+esac
+if [ "$DOMAIN" != "" ]
+then
+	sed '/domain/d' /etc/resolv.conf | \
+	sed '/search/d' > /tmp/resolv.conf
+	mv /tmp/resolv.conf /etc/resolv.conf
+	echo domain $DOMAIN >> /etc/resolv.conf
+	echo search $DOMAIN >> /etc/resolv.conf
+fi

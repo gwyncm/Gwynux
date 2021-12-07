@@ -1,0 +1,16 @@
+#! /bin/sh
+# set modules for cd burning and normal 
+if [ X$1 != Xon ]
+then
+	rmmod sg
+	rmmod ide-scsi
+	modprobe cdrom
+	modprobe ide-cd
+	echo cdburning off
+else
+	rmmod ide-cd
+	rmmod cdrom
+	modprobe ide-scsi
+	modprobe sg
+	echo cdburning on
+fi

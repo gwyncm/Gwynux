@@ -1,0 +1,24 @@
+#!/bin/sh
+# start stop httpd
+#
+case "$1" in
+'start')
+  	if [ -f /etc/httpd/httpd.conf ]
+	then
+		/usr/sbin/apachectl start 
+		exit $?
+	fi
+	;;
+'stop')
+  	if [ -f /etc/httpd/httpd.conf ] 
+	then
+		/usr/sbin/apachectl start 
+		exit $?
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 1

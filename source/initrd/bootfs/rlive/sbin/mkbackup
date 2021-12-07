@@ -1,0 +1,14 @@
+#! /bin/sh
+# make a backup iso image of . in <target>
+if [ X$1 = X ]
+then 
+	echo "usage: $0 <target> [<name>]"
+	exit
+fi
+if [ $# -gt 1 ]
+then
+	NAME=$2
+else
+	NAME="CD Backup"
+fi
+mkisofs -o $1  -R -V "$NAME" -v -d -D -N .

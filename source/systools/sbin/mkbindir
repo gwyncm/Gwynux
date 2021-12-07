@@ -1,0 +1,44 @@
+#! /bin/sh
+# build a binary gwynux directory
+if [ $# -lt 1 ]
+then 
+	echo usage: $0 \<directory\> \[ \<target\> \]
+	exit
+fi
+DIR=$1
+if [ $# -gt 1 ]
+then
+	TARGET=$2
+else
+	TARGET=$1
+	rm -r gwynux/$TARGET 2> /dev/null
+fi
+#
+# create directory
+#
+if [ -d $DIR ]
+then
+	echo Processing $DIR
+	mkdir gwynux/$TARGET 2>/dev/null
+else
+	echo $DIR does not exist.
+	exit 1
+fi
+#
+# link base files
+#
+echo Processing $DIR base files
+for file in $DIR/*bin.tgz
+do
+	basefile=`basename $file` 
+	if [ ! -f gwynux/$TARGET/$basefile ]
+	then
+		if [ -h $file ]
+		then
+			link=`ls -l $file | sed 's/.*->//' | sed 's/\.\.\///'`
+			ln $link gwynux/$TARGET/$basefile
+		else
+			ln $DIR/$basefile gwynux/$TARGET/$basefile
+		fi
+	fi
+done

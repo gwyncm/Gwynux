@@ -1,0 +1,18 @@
+#!/bin/sh
+# insert local modules
+#
+case "$1" in
+'start')
+	echo 'Inserting local modules'
+	sed 's/^/\/sbin\/modprobe /' /etc/modlist | /bin/sh -x
+	;;
+'stop')
+	echo 'Removing local modules.'
+	# who cares
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

@@ -1,0 +1,12 @@
+class block
+	{
+void	init(void);
+void	additem(void);
+void	delitem(void);
+void	getnumber(void);
+void	getins(void);
+void	getid(void);
+void	getnparm(void);
+void	getmsg(void);
+void	getparm(void);
+	};

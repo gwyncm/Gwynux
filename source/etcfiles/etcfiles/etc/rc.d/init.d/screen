@@ -1,0 +1,19 @@
+#!/bin/sh
+# things done after the root file system is mounted
+#
+case "$1" in
+'start')
+	echo 'Screen blanking.'
+
+	# Screen blanks after 15 minutes idle time.
+	setterm -blank 15
+	;;
+'stop')
+	# no undoing required
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 0

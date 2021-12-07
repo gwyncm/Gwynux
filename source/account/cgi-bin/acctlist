@@ -1,0 +1,85 @@
+1500:Furniture & Fixtures    
+1510:Equipment               
+1520:Reference Library       
+1530:Vehicle(s)              
+1540:Computer Hardware       
+1550:Computer Software       
+1560:Chattels                
+5100:Purchases for Resale    
+5110:Packaging Materials     
+5000:Opening Inventory       
+5200:Closing Inventory       
+6000:Professional Services   
+6010:Secretarial Services    
+6030:Commissions             
+6050:Sub-Contracted Services 
+6100:Rent                    
+6105:Mortgage Interest       
+6110:Condominium Fees        
+6115:Property Taxes          
+6120:Insurance               
+6360:Miscellaneous           
+6125:Utilities               
+6125:Utilities               
+6130:Repairs & Maintenance   
+6150:Other Building Expenses 
+6195:Personal Use            
+6200:Business Taxes & Permits
+6205:Telecommunications      
+6210:Postage, Courier & Frght
+6215:Materials & Supplies    
+6220:Equipment Rent & Repair 
+6225:Liab or Bus Insurance   
+6230:Printing & Copying      
+6235:Ref Books & Magazines   
+6240:Stationery & Cards      
+6250:Other Office Expenses   
+6300:Loan Interest           
+6305:Bank Charges            
+6310:Accounting & Legal Fees 
+6315:Association Dues        
+6320:Business Promotion      
+6325:Travel                  
+6330:Conferences & Seminars  
+6335:Advertising             
+6340:Small Tools             
+6350:Bad Debts               
+6400:Garaging & Parking      
+6405:Leasing                 
+6410:Gasoline                
+6415:Insurance               
+6420:Plates & Permits        
+6425:Repairs & Maintenance   
+6430:Financing Charges       
+6435:Washing & Waxing        
+6450:Other Vehicle Expenses  
+6495:Personal Use            
+1000:Bank General            
+2000:Accrued Expenses        
+2100:GST Collected           
+1100:GST Paid                
+1200:Accounts Receivable     
+2300:Accounts Payable        
+4000:Sales Services          
+4100:Sales Products          
+2200:PST Collected           
+3300:Retained Earnings       
+4200:Commissions             
+4300:Partnership Alloc T1013 
+4400:Dividends               
+4500:Other Income            
+1010:Cash on Hand            
+1020:Prepaid Federal Taxes   
+1030:Prepaid Provincial Taxes
+1040:Inventory               
+1300:Notes Receivable        
+2400:Notes Payable           
+2410:Bank Loans              
+1600:Elig. Capital Property  
+1610:Organizational Expenses 
+2420:Income Taxes Payable    
+3600:Shareholders Advance    
+2450:Salary Payable          
+6900:Depreciation            
+3400:Capital Stock           
+1050:Prepaid Expenses        

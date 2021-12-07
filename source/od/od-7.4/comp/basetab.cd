@@ -1,0 +1,12 @@
+class basetab
+	{
+void	init(void);
+void	load(void);
+void	save(void);
+void	build(void);
+void	first(void);
+void	next(void);
+void	prev(void);
+void	write(void);
+void	read(void);
+	};

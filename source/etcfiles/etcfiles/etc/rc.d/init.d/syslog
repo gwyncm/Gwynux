@@ -1,0 +1,27 @@
+#!/bin/sh
+# start stop syslog/klog
+#
+case "$1" in
+'start')
+  	if [ -x /usr/sbin/syslogd ]
+	then
+    		/usr/sbin/syslogd
+    		sleep 1 # Prevents a race condition with SMP kernels
+    		/usr/sbin/klogd -c 3
+		exit 0
+	fi
+	;;
+'stop')
+  	if [ -x /usr/sbin/syslogd ]
+	then
+		/usr/bin/pkill syslogd
+		/usr/bin/pkill klogd
+		exit 0
+	fi
+	;;
+*)
+	echo "Usage: $0 { start | stop }"
+	exit 1
+	;;
+esac
+exit 1

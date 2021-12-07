@@ -1,0 +1,32 @@
+#! /bin/sh
+# Gwynux network setup
+while true
+do
+/usr/bin/dialog --title "Gwynux Network Setup" \
+--backtitle "Gwynux Installation" \
+--menu \
+"Select the network services you would like to set up.\n\n\
+Select with the up/down arrow keys and press enter\n\
+or use the first letter of the choice.\n\n" 20 65 8 \
+"Exit"		"Exit network setup (no changes)" \
+"Interface"	"Setup a network interface" \
+"Hostname"	"Setup your system hostname" \
+"Domain"	"Setup your network domainname" \
+"Nameserv"	"Setup your network nameserver" \
+2> /tmp/menu.tmp.$$
+retval=$?
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+case $retval in
+  0)
+  case $choice in
+  [Ee]*)	clear; exit ;;
+  [Ii]*)	clear; ./setup.netcfg ;;
+  [Hh]*)	clear; ./setup.nodename ;;
+  [Dd]*)	clear; ./setup.domain ;;
+  [Nn]*)	clear; ./setup.nameserv ;;
+  esac ;;
+  1) clear; exit ;;	# cancel pressed
+  255) clear; exit ;;   # ESC pressed
+esac
+done
